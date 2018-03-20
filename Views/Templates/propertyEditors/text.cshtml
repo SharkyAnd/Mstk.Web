@@ -1,0 +1,14 @@
+﻿<div>
+    <!-- ko ifnot: isReadOnly -->
+    <textarea class="form-control input-sm no-stretch"
+              style="height: auto" 
+              data-bind="textInput: value, attr: { maxlength: fieldLength, rows: rows }"></textarea>
+    <!-- /ko -->
+    <!-- ko if: isReadOnly -->
+    <textarea class="form-control input-sm disabled"
+              style="height: auto"
+              disabled
+              data-bind="value: value, attr: { maxlength: fieldLength, rows: rows }"></textarea>
+    <!-- /ko -->
+</div>
+

@@ -1,0 +1,11 @@
+﻿<div class="vertical-layout" style="min-height:600px;">
+    <div class="vertical-content-aware" style="margin-bottom:10px">
+        <h4 style="margin-top: 0">
+            <!-- ko text:title--><!-- /ko -->
+            <!-- ko if: $data.helpText -->
+            <br/><span class="small" style="text-transform:none" data-bind="text:$data.helpText"></span>
+            <!-- /ko -->
+        </h4>
+    </div>
+    <!-- ko template : template--><!-- /ko -->
+</div>

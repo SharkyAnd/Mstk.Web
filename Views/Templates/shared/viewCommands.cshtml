@@ -1,0 +1,8 @@
+﻿<!-- ko if: hasEnabledCommands -->
+<div class="btn-group btn-group-sm" data-bind="foreach:items">
+    <button class="btn btn-default btn-view-command"
+            data-bind="css:{active: isActive}, enable: isEnabled, attr:{title: isEnabled()? helpText:disabledText}, clickAndBlur: $data.execute.bind($data)">
+        <span data-bind="attr:{class: iconClass}, style:{fontSize: fontSize}"></span>
+    </button>
+</div>
+<!-- /ko -->

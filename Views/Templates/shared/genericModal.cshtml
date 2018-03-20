@@ -1,0 +1,26 @@
+﻿<div class="modal fade" data-bind="validationOptions: { errorClass: 'has-error', errorElementClass: 'has-error', insertMessages: false }">
+    <div class="modal-dialog" data-bind="css: { 'modal-lg': width == DialogWidth.Large, 'modal-sm': width == DialogWidth.Small,'modal-xlg': width == DialogWidth.XLarge }">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" data-bind="text: name"></h4>
+            </div>
+            <div class="modal-body" style="overflow-y: auto; overflow-x: hidden">
+                <!-- ko template: { name: dataTemplate, data: data } --><!-- /ko -->
+                <!-- ko if: isBusy -->
+                    <!-- ko template: 'shared/loadingPanel' --><!-- /ko -->
+                <!-- /ko -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" 
+                        style="width:120px" 
+                        class="btn btn-primary" 
+                        data-bind="text: acceptText, click: accept, enable: isValid() && !isBusy(), visible: acceptVisible"
+                ><i data-bind="css: { 'fa fa-spinner fa-spin': isBusy }"></i></button>
+                <button type="button" 
+                        style="width:120px" 
+                        class="btn btn-default" 
+                        data-bind="text: cancelText, click: cancel, enable: !isBusy(), visible:cancelVisible"></button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

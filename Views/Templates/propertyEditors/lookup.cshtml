@@ -1,0 +1,30 @@
+﻿<div>
+    <!-- ko ifnot: isReadOnly -->
+    <input type="hidden"
+           class="form-control input-sm"
+           data-bind="value: value, select2: {
+    minimumInputLength: minLength(), 
+    query: queryItemsInteractive.bind($data), 
+    formatResult: formatItem.bind($data), 
+    formatSelection: formatSelection.bind($data), 
+    allowClear: !isRequired(), 
+    initSelection: initSelection.bind($data), 
+    id: getItemId.bind($data),
+    placeholder: helpText(),
+    disabled:isDisabled}, 
+    event: { change: selectionChanged.bind($data) },attr:{id: name}
+           "/>
+    <!--
+    http://stackoverflow.com/questions/23104371/set-initial-value-of-select2-ajax-with-knockout
+    https://github.com/ivaynberg/select2/wiki/Knockout.js-Integration
+    http://stackoverflow.com/questions/21841026/knockout-and-select2-get-selected-object
+    -->
+    <!-- /ko -->
+    <!-- ko if: isReadOnly -->
+    <input type="text"
+           class="form-control input-sm disabled"
+           disabled
+           data-bind="value: displayValue" />
+    <!-- /ko -->
+</div>
+

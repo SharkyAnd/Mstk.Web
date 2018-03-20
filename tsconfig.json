@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "sourceMap": true,
+    "noImplicitUseStrict": false
+  },
+  "include": [
+    "Scripts/app/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "Scripts/*.js"
+  ]
+}

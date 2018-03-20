@@ -1,0 +1,6 @@
+field name,english description,russian description,format
+name,name of organization,Ќаименование организации,string
+region,region,регион расположени€,string
+city,city,город расположени€,string
+"address,""Street, building, structure (if any)"",""”лица, дом, строение (если существует)"",string"
+telephone,contact phone,контактный телефон,string

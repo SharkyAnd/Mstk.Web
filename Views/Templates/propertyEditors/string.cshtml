@@ -1,0 +1,13 @@
+﻿<div>
+    <!-- ko ifnot: isReadOnly -->
+    <input type="text"
+           class="form-control input-sm"
+           data-bind="textInput: value, attr: { maxlength: fieldLength, placeholder: helpText }, disable: isReadOnly, event: { keypress: keypress } "/>
+    <!-- /ko -->
+    <!-- ko if: isReadOnly -->
+    <input type="text"
+           class="form-control input-sm disabled"
+           disabled
+           data-bind="value: displayValue"/>
+    <!-- /ko -->
+</div>

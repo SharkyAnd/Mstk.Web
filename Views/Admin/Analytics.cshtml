@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Сводная аналитика";
+}
+<div class="vertical-layout" style="padding: 0 15px">
+    <div class="vertical-fill" data-bind="template: {name: 'analytics/index' }"></div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        require(['analytics/main'], function (ViewModel) {
+            var model = new ViewModel.Controller();
+            ko.applyBindings(model);
+        });
+
+    </script>
+}

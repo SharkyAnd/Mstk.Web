@@ -1,0 +1,321 @@
+[
+	{
+        "Name": "Администратор IX Group (суперадмин)",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "ixgroup-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор (IXGroup)" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "ixgroup-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "ixgroup-admin@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор (IXGroup)" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=IX-Group" }
+        ]
+    },
+	{
+        "Name": "Администратор ЦКР СОТА",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "ckr-sota-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор ЦКР СОТА" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",   "Value": "ckr-sota-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "ckr-sota-admin@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор ЦКР СОТА" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=CKR-SOTA" }
+        ]
+    },
+	{
+        "Name": "Администратор IBS (суперадмин)",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "ibs-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор (IBS)" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-managers" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-operators" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "nsi-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "uo-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "ibs-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "ibs-admin@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор (IBS)" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=IBS" }
+        ]
+    },
+	{
+        "Name": "Администратор РТМ (чтение)",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "rtm-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор РТМ" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",   "Value": "rtm-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "rtm-admin@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор (РТМ)" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=RTM" }
+        ]
+    },
+	{
+        "Name": "Администратор ЗИТ (чтение/запись)",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "zit-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор ЗИТ" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",   "Value": "zit-admin@yandex.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "zit-admin@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор (ЗИТ)" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=ZIT" }
+        ]
+    },
+    {
+        "Name": "regtestuser1",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "testruk@gisp.gov.ru" },
+			 { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "BI_ANALYSIS_ADMIN" }, 
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "POR_Представитель региона" }, 
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "REG_3464_Адыгея" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "testruk" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=regtestuser1,OU=GISPTestUsers,OU=GISP,DC=gisp,DC=gov,DC=ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "1234567890123" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "РОИВ" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2016-01-14T16:31:20.040Z" }
+        ]
+    },
+    {
+        "Name": "Адыгея",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "regiona@gisp.gov.ru" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "BI_ANALYSIS" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "POR_Представитель региона" },      
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "REG_3464_Адыгея" },      
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Анзаур Куанов  Асланович" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=region1,OU=GISPUsers,OU=GISP,DC=gisp,DC=local" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2016-01-14T16:31:20.040Z" }
+        ]
+    },
+    {
+        "Name": "Южный ФО",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "regionuo@gisp.gov.ru" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "BI_ANALYSIS" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "POR_Представитель региона" },      
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "REG_1003_Южный ФО" },      
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Анзаур Куанов  Асланович" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=region1,OU=GISPUsers,OU=GISP,DC=gisp,DC=local" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2016-01-14T16:31:20.040Z" }
+        ]
+    },
+    {
+        "Name": "OrgTestUser1@gisp.gov.ru",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "OrgTestUser1@gisp.gov.ru" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "BI_ANALYSIS" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "POR_Представитель организации" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "OrgTestUser1" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "Kazna@geropharm.com" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=OrgTestUser1,OU=GISPTestUsers,OU=GISP,DC=gisp,DC=gov,DC=ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "1027810343417" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "ООО Герофарм" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2016-01-18T22:08:39.184Z" }
+        ]
+    },
+    {
+        "Name": "POR_Администраторы",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "1000299686" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "POR_Администраторы@yandex.ru" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "BI_ANALYSIS_ADMIN" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "POR_Администраторы" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgtype", "Value": "A" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "Тестовое ведомство" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "1025901364708" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T22:23:47.897Z" }
+        ]
+    },
+    {
+        "Name": "EsiaTest010@yandex.ru",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "1000299701" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "EsiaTest010@yandex.ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgtype", "Value": "A" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "Тестовое ведомство" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "2000000000002" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T22:23:47.897Z" }
+        ]
+    },
+    {
+        "Name": "EsiaTest011@yandex.ru",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "1000299702" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "EsiaTest011@yandex.ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgtype", "Value": "A" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "Тестовое ведомство" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "2000000000002" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T22:23:47.897Z" }
+        ]
+    },
+    {
+        "Name": "EsiaTest012@yandex.ru",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "1000299703" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "EsiaTest011@yandex.ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgtype", "Value": "A" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "Тестовое ведомство" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "2000000000002" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T22:23:47.897Z" }
+        ]
+    },
+    {
+        "Name": "EsiaTest006@yandex.ru",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "1000299684" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "EsiaTest011@yandex.ru" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgtype", "Value": "A" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgname", "Value": "Тестовое ведомство" },
+            { "Type": "http://gisp.gov.ru/identity/claims/orgOGRN", "Value": "2000000000002" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T22:23:47.897Z" }
+        ]
+    },
+    {
+        "Name": "iivanov@gisp.local",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "iivanov@gisp.local" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Иван И. Иванов" },
+            { "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=Ива И. Иванов,CN=Users,DC=gisp,DC=local" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "iivanov@gisp.local" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", "Value": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant", "Value": "2015-12-14T23:44:40.372Z" }
+        ]
+    },
+	{
+        "Name": "Тест Админ",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "stest-admin-name" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "test-admin" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "no-existing-role" },			
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "test-admin-email" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "test-admin-ni" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "test-admin-disp-name" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "no-ou" }
+        ]
+    },
+    {
+        "Name": "Аналитик",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "Аналитик" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Аналитик" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-analysts" },
+			{ "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Аналитик" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=CKR-SOTA" }
+        ]
+
+    },
+    {
+        "Name": "Оператор",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "Оператор" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Оператор" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-operators" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-operators" },
+			{ "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Оператор" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=Mintrans" }
+        ]
+
+    },
+	{
+        "Name": "Админ",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "Администратор" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-admins" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-admins" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "terry@contoso.com" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Администратор" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "OU=ZIT" }
+        ]
+
+    },
+	{
+        "Name": "Тестовый Руководитель",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "ibs.manager@SGK.ASU-TK.RU" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Администратор" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "wagons-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "df-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "portal-users" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "md-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "support-users" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "uo-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "upp-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "pm-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mp-managers" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "developer@asutk.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "ibs.manager@SGK.ASU-TK.RU" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Тестовый Руководитель" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=Руководитель,OU=IBS,OU=User Accounts,DC=SGK,DC=ASU-TK,DC=RU" }
+        ]
+    },
+	{
+		"Name": "IBS Analyst",
+        "Claims": [
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "Value": "ibs.analyst@SGK.ASU-TK.RU" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname", "Value": "Аналитик" },
+            { "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "Пользователи домена" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "portal-users" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "df-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mtb-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "fts-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "md-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "support-users" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "uo-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "mstk-managers" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "upp-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "pm-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "nsi-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "wagons-analysts" },
+			{ "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Value": "tp-analysts" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", "Value": "developer@asutk.ru" },
+            { "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "Value": "ibs.manager@SGK.ASU-TK.RU" },
+            { "Type": "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Value": "EmbeddedSts" },
+            { "Type": "http://schemas.xmlsoap.org/claims/displayname", "Value": "Аналитик" },
+			{ "Type": "http://schemas.xmlsoap.org/claims/distinguishedname", "Value": "CN=Аналитик,OU=IBS,OU=User Accounts,DC=SGK,DC=ASU-TK,DC=RU" }
+        ]
+	}
+]

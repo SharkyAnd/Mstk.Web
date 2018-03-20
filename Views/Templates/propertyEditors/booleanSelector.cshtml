@@ -1,0 +1,15 @@
+﻿<!-- ko ifnot: isReadOnly -->
+<div class="btn-group btn-group-xs" tabindex="-1" data-bind="event: { keypress: keypress }">
+    <button class="btn btn-default" data-bind="text: trueVal, 
+            click: function(){ trueSelector('toggle') },
+            css: { 'btn-success': trueSelector()}">
+    </button>
+    <button class="btn btn-default" data-bind="text: falseVal, 
+            click: function(){ falseSelector('toggle') },
+            css: { 'btn-danger': falseSelector()}">
+    </button>
+</div>
+<!-- /ko -->
+<!-- ko if: isReadOnly -->
+<div class="readonly-value" data-bind="text: displayValue"></div>
+<!-- /ko -->

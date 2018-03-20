@@ -1,0 +1,18 @@
+﻿<div role="tabpanel" style="position:absolute;top:0; left:0; right:0; bottom:0;">
+    <ul class="nav nav-tabs" role="tablist" style="margin-bottom:18px" data-bind="foreach: pages">
+        <!-- ko if: isVisible -->
+        <li role="presentation" data-bind="css:{ active: id == $parent.activePageId() }">
+            <a role="tab" data-bind="attr: { href: '#pp_' + id }" data-toggle="tab">
+                <span data-bind="text: title"></span>
+                <img src="~/images/select2-spinner.gif" data-bind="visible: isBusy()"/>
+            </a>
+        </li>
+        <!-- /ko -->
+    </ul>
+    <div class="tab-content" data-bind="foreach: pages" style="position:absolute;top:55px;bottom:0;right:0;left:0;overflow-y:auto">
+        <!-- ko if: isVisible -->
+        <div role="tabpanel" class="tab-pane"
+             data-bind="attr:{ id: id }, template: template, css:{ active: id == $parent.activePageId() }"></div>
+        <!-- /ko -->
+    </div>
+</div>

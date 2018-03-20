@@ -1,0 +1,6 @@
+﻿<!-- ko ifnot: isReadOnly -->
+<input type="checkbox" class="checkbox" style="display:inline-block" data-bind="checked: value" /> <!-- ko text: title --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: isReadOnly -->
+<span style="display:inline-block;font-size:16px;margin-top:5px" class="fa" data-bind="css: { 'fa-square-o': !value(), 'fa-check-square-o': value }"></span>
+<!-- /ko -->

@@ -1,0 +1,41 @@
+{
+    /* See all the pre-defined configs here: https://www.npmjs.com/package/eslint-config-defaults */
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "plugins": [
+    ],
+    "parserOptions": {
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true,
+        "amd": true
+    },
+    "globals": {
+        "ko": false, // Knockout
+        "Class": false, // Base class
+        "toastr": false, // Toastr
+        "CKEDITOR": false, // Ckeditor
+        "CodeMirror": false, // Codemirror html editor
+        "_": false, // Underscorejs
+        "moment": false, // Momentjs
+        "Highcharts": false,
+        "DevExpress": false, // DevExtreme ui lib
+        "signals": false // js-signals
+    },
+    "rules": {
+        // 
+        "indent": ["error", 4], // 4 пробела на сдвиг, никаких табов
+        "linebreak-style": ["warn", "windows"], // перенос строк в стиле windows
+        "quotes": "off", //["warn", "single"], // используем только одинарные кавычки, так исторически сложилось
+        "semi": ["error", "always"], // ; после выражения обязательна
+        // 
+        "comma-dangle": ["error", "never"], // запятая после последнего элемента не нужна
+        "no-cond-assign": ["error", "always"], // присвоение в условиях запрещено
+        "no-console": ["warn", { "allow": ["warn", "error"] }], // ограничение на console.log
+        "no-unused-vars": ["warn", { "args": "none" }], // неиспользуемые переменные не рекомендуются (исключение для аргументов)
+        "no-extra-boolean-cast": ["warn"], // двойное отрицание !! (каст в булево значение) не рекомендуется
+        "no-redeclare": ["warn"] // повторное определение переменных в том же контексте не рекомендуется (пока warn)
+    }
+}

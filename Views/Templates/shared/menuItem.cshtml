@@ -1,0 +1,10 @@
+﻿<li>
+    <a href="javascript:;" data-bind="click:click, enable: isEnabled, 
+       style:{'color':isEnabled()?'black':'lightgrey', cursor:isEnabled()?'pointer':'default'}, 
+       attr:{title:isEnabled()?'':disabledText}">
+        <!-- ko if: iconClass -->
+        <span data-bind="attr: { 'class': iconClass }"></span> 
+        <!-- /ko -->
+        <span data-bind="text:title"></span>
+    </a>
+</li>

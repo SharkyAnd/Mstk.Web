@@ -1,0 +1,16 @@
+﻿<!-- ko if: isVisible -->
+<li>
+    <div>
+        <span style="cursor: pointer; cursor: hand" data-bind="click: toggleExpand">
+            <i class="fa fa-fw fa-chevron-down" data-bind="visible: hasChildren && expanded()"></i>
+            <i class="fa fa-fw fa-chevron-right" data-bind="visible: hasChildren && !expanded()"></i>
+            <i class="fa fa-fw" data-bind="visible: !hasChildren"></i>
+        </span>
+        <input type="checkbox" data-bind="checked: selected"/> <span data-bind="text: text, click: toggleSelect"></span>
+        @*<small class="label label-info" data-bind="text:sortOrder"></small>*@
+    </div>
+    <!-- ko if: expanded -->
+    <ul data-bind="template: { name: 'shared/treeNode', foreach: nodes }"></ul>
+    <!-- /ko -->
+</li>
+<!-- /ko -->

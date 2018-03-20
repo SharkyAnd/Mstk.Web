@@ -1,0 +1,1139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mintrans.Mstk.Web</name>
+    </assembly>
+    <members>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:Mintrans.Mstk.Web.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.#ctor(Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:Mintrans.Mstk.Web.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mintrans.Mstk.Web.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.AnalyticsApiController">
+            <summary>
+            Аналитика
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.AnalyticsApiController.GetReportTypes">
+            <summary>
+            Возвращает список отчетов для вкладки Аналитика
+            </summary>
+            <returns>Список отчетов</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.AnalyticsApiController.CreateReport(Mintrans.Mstk.Web.Models.FilteredMembersRequest)">
+            <summary>
+            Возвращает файл с отфильтрованными показателями
+            </summary>
+            <param name="request">Модель запроса</param>
+            <returns>Идентификатор файла</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.AnalyticsApiController.GetStatistics">
+            <summary>
+            Возвращает список сформированных отчетов
+            </summary>
+            <returns>Список отчетов</returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.MemberFormulaController">
+            <summary>
+            Управление формулой рассчетного показателя
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberIndicatorsApiController.GetByParameters(System.Int32,System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Возвращает описание индикатора для редактирования или создания
+            </summary>
+            <param name="memberId"></param>
+            <param name="dimMemberId"></param>
+            <param name="periodId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.IndicatorsApiController.GetForEdit(System.Int32)">
+            <summary>
+            Возвращает описание индикатора для редактирования
+            </summary>
+            <param name="id">ИД индикатора</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.List(Mintrans.Mstk.Web.Models.MembersListRequestModel)">
+            <summary>
+            Возвращает иерархический список показателей, соответствующих условиям, указанным в запросе.
+            </summary>
+            <param name="request">Запрос</param>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ListMembers(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Возвращает выпадающий список показателей
+            </summary>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.Comparable(System.Int32)">
+            <summary>
+            Возвращает актуальные показатели, сравнимые с указанным (имеющие тот же самый набор разрезов).
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns>Список сравнимых показателей, включая показатель, указанный в качестве параметра.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.LookupFormulaMembers(System.Int32,System.String)">
+            <summary>
+            Возвращает показатели, пригодные к использованию в рассчетном на базе memberIdю. Для этого должны
+            - совпадать разрезы
+            - единица измерения
+            - периоды
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <param name="q"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.Appendable(System.Int32)">
+            <summary>
+            Возвращает показатели, которые можно
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns>Список показателей, доступных для размещения, включая показатель, указанный в качестве параметра.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.GetOne(System.Int32,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Возвращает информацию о показателе с указанным идентификатором. Дочерние показатели не включаются в результат.
+            </summary>
+            <param name="id">Идентификатор показателя.</param>
+            <param name="children">Признак необходимости включения дочерних показателей. По умолчанию не включаются.</param>
+            <param name="actualOnly">Только актуальные</param>
+            <param name="minimalAccess">Минимальный уровень доступа</param>
+            <returns>Информация о показателе</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ToggleActuality(System.Int32)">
+            <summary>
+            Переключение флага IS_ACTUAL для показателя
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.Delete(System.Int32)">
+            <summary>
+            Установка флага IS_DELETED для показателя. Удаленные показатели не восстанавливаются черз интерфейс
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ListIndicators(System.Int32)">
+            <summary>
+            Возвращает индикаторы, связанные с показателем.
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns>Список индикаторов.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ListPanels(System.Int32)">
+            <summary>
+            Возвращает панели, в которых используется показатель.
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns>Список пнаелей.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ListPortfolios(System.Int32)">
+            <summary>
+            Возвращает имена пользователей, в чьих портфелях используется показатель.
+            </summary>
+            <param name="memberId">Идентификатор показателя.</param>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MembersApiController.ParametersFieldsLookup(System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Возвращает выпадающий список показателей
+            </summary>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController">
+            <summary>
+            Чтение и изменение значений показателей
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetValues(System.Int32,System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Возвращает значения показателя для заданных значений разрезов и периода.
+            </summary>
+            <param name="memberId">Идентификатор показателя</param>
+            <param name="dimMemberId">Идентификаторы значений разрезов</param>
+            <param name="periodId">Идентификатор периода</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetValues(System.Int32,System.Collections.Generic.List{System.Int32},System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Возвращает значения показателя для заданных значений разрезов и периода.
+            </summary>
+            <param name="memberId">Идентификатор показателя</param>
+            <param name="dimMemberId">Идентификаторы значений разрезов</param>
+            <param name="periodId">Идентификатор периода</param>
+            <param name="minDate">Дата начала периода</param>
+            <param name="maxDate">Дата конца периода</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.SaveValues(System.Int32,Mintrans.Mstk.Web.Models.MemberValuesEditorModel)">
+            <summary>
+            Сохраняет значения показателя для заданных значений разрезов и периода.
+            </summary>
+            <param name="memberId">Идентификатор показателя</param>
+            <param name="model">Информация о значениях, которые нужно сохранить</param>
+            <returns>True, если сохранение выполнено успешно</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetAllValuesForDimensionForAllDates(System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Возвращает все значения показателя для указанного разреза за все периоды
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="periodId">ИД периода</param>
+            <param name="dimensionId">ИД разреза</param>
+            <param name="dimMembers">Идентификаторы значений разрезов, отличных от указанного</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetAllValuesForDimension(System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Возвращает все значения показателя для указанного разреза на максимальную дату.
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="periodId">ИД периода</param>
+            <param name="dimensionId">ИД разреза</param>
+            <param name="dimMembers">Идентификаторы значений разрезов, отличных от указанного</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetAllValuesForDimensionByDate(System.Int32,System.Int32,System.Int32,System.String,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Возвращает все значения показателя для указанного разреза на указанную дату.
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="periodId">ИД периода</param>
+            <param name="dimensionId">ИД разреза</param>
+            <param name="date">Дата</param>
+            <param name="dimMembers">Идентификаторы значений разрезов, отличных от указанного</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberValuesApiController.GetAllValueSetsForDimensionByDate(System.Int32,System.Int32,System.Int32,System.String,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Возвращает все значения показателя для указанного разреза на указанную дату.
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="periodId">ИД периода</param>
+            <param name="dimensionId">ИД разреза</param>
+            <param name="date">Дата</param>
+            <param name="dimMembers">Идентификаторы значений разрезов, отличных от указанного</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController">
+            <summary>
+            Управление фильтрами
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.All(System.Boolean,System.Boolean)">
+            <summary>
+            Возвращает список всех значений фильтров.
+            </summary>
+            <param name="actualOnly">Только актуальные. По умолчанию true.</param>
+            <param name="withDataOnly">Только с привязанными показателями. По умолчанию true.</param>
+            <returns>Список значений фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.AllFrom(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Возвращает указанное значение фильтра вместе со всеми дочерними.
+            </summary>
+            <param name="filterId">Идентификатор значения фильтра</param>
+            <param name="actualOnly">Только актуальные. По умолчанию true.</param>
+            <param name="withDataOnly">Только с привязанными показателями. По умолчанию true.</param>
+            <returns>Список значений фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.Add(Mintrans.Mstk.Web.Models.FilterItemModel)">
+            <summary>
+            Создает новое значение фильтра
+            </summary>
+            <param name="model">Информация о значении фильтра</param>
+            <returns>Созданное значение фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.Update(System.Int32,Mintrans.Mstk.Web.Models.FilterItemModel)">
+            <summary>
+            Обновляет информацию о значении фильтра
+            </summary>
+            <param name="filterId">Идентификатор значения</param>
+            <param name="model">Новая информация о значении фильтра</param>
+            <returns>Измененное значение фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.SetParent(System.Int32,System.Int32)">
+            <summary>
+            Устанавливает родительское значение фильтра для указанного значения.
+            </summary>
+            <param name="filterId">Идентификатор значения фильтра</param>
+            <param name="parentId">Идентификатор родительского значения</param>
+            <returns>Измененное значение фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.SetSortOrder(System.Int32,System.Int32)">
+            <summary>
+            Устанавливает порядковый номер для указанного значения фильтра.
+            </summary>
+            <param name="filterId">Идентификатор значения фильтра</param>
+            <param name="position">Новый порядковый номер</param>
+            <returns>Измененное значение фильтра</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.ListMembers(System.Int32)">
+            <summary>
+            Возвращает список показателей, связанных с указанным значением фильтра.
+            </summary>
+            <param name="filterId">ИД значения фильтра</param>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.LinkMember(System.Int32,System.Int32)">
+            <summary>
+            Связывает показатель со значением фильтра.
+            </summary>
+            <param name="filterId">ИД значения фильтра</param>
+            <param name="memberId">ИД показателя</param>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.UnlinkMember(System.Int32,System.Int32)">
+            <summary>
+            Удаляет связь показателя со значением фильтра.
+            </summary>
+            <param name="filterId">ИД значения фильтра</param>
+            <param name="memberId">ИД показателя</param>
+            <returns>Список показателей</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.AddShortcut(System.Int32)">
+            <summary>
+            Добавляет значение фильтра в рубрикатор
+            </summary>
+            <param name="filterId">ИД значения фильтра</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.FiltersApiController.DeleteShortcut(System.Int32)">
+            <summary>
+            Удаляет значение фильтра в рубрикатор
+            </summary>
+            <param name="filterId">ИД значения фильтра</param>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.WatchApiController.PeriodsForMembers(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Возвращает список периодов, общих для указанных показателей.
+            </summary>
+            <param name="memberId">Массив показателей</param>
+            <returns>Список периодов</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.WatchApiController.DimensionsForMember(System.Int32,System.String)">
+            <summary>
+            Возвращает список справочников со всеми их значениями. Дополнительно для каждого значения указывается наличие фактов.
+            </summary>
+            <param name="memberId">Идентификатор показателя</param>
+            <param name="dimMembers">Список идентификаторов значений справочников, для комбинации которых нужно проверить наличие фактов. Список в виде "DIM1=DM1;DIM2=DM2".</param>
+            <returns>Список справочников для показателя</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.WatchApiController.GetValuesForAdded">
+            <summary>
+            Получение объединенных данных для режима "добавить на график"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.MemberFiltersController">
+            <summary>
+            Управления фильтрами, связанными с показателем
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberFiltersController.List(System.Int32)">
+            <summary>
+            Возвращает список фильтров, связанных с показателем. В список включаются как значения связанных фильтров, так и все их родительские значения.
+            </summary>
+            <param name="memberId">Идентификатор показателя</param>
+            <returns>Список значений фильтров</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberFiltersController.Update(System.Int32,Mintrans.Mstk.Web.Models.MemberFilterChangeRequest)">
+            <summary>
+            Обновляет связи показателя с фильтрами.
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="request">Информация об изменениях в связях</param>
+            <returns></returns>
+            <exception cref="T:Mintrans.Asutk.DataException"></exception>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Controllers.Api.MemberDimensionsController">
+            <summary>
+            Управление разрезами показателя
+            </summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberDimensionsController.List(System.Int32)">
+            <summary>
+            Возвращает список разрезов, связанных с показателем
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <returns>Список связей с разрезами</returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberDimensionsController.Add(System.Int32,Mintrans.Mstk.Web.Models.MemberDimensionChangeRequest)">
+            <summary>
+            Создает связь показателя с разрезом
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="viewModel">Информация о связи с разрезом</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberDimensionsController.Update(System.Int32,Mintrans.Mstk.Web.Models.MemberDimensionChangeRequest)">
+            <summary>
+            Обновляет связь показателя с разрезом
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="viewModel">Информация о связи с разрезом</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.Api.MemberDimensionsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Удаляет связь показателя с разрезом
+            </summary>
+            <param name="memberId">ИД показателя</param>
+            <param name="dimensionId">ИД разреза</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.WatchController.ExportToPdf(Mintrans.Mstk.Web.Models.ExportToPdfRequest)">
+            <summary>
+            Экспорт показателя в PDF
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.Controllers.WatchController.ExportPanelToPdf(Mintrans.Mstk.Web.Models.ExportPanelToPdfRequestViewModel)">
+            <summary>
+            Экспорт аналитической панели в pdf
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.CorsOptionsModule">
+            <summary>
+                <c>HttpModule</c> to support CORS.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Models.ExportPanelToPdfRequestViewModel.Title">
+            <summary>
+            Заголовок панели
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Models.ExportPanelToPdfRequestViewModel.Description">
+            <summary>
+            Описание панели
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Models.ExportPanelToPdfRequestViewModel.Widgets">
+            <summary>
+            Виджеты на панели
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Models.ExportPanelToPdfRequestViewModel.PanelWidgetsStyle">
+            <summary>
+            Файл стилей для виджетов панели
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ChartTitle">
+            <summary>
+              Looks up a localized string similar to Сравнение показателей.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ChartTitleSingle">
+            <summary>
+              Looks up a localized string similar to Просмотр данных по показателю.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ConfirmQuestion">
+            <summary>
+              Looks up a localized string similar to Список добавленных к сравнению элементов будет сброшен. Продолжить?.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Monitor_Chart_Options_HorizontalType">
+            <summary>
+              Looks up a localized string similar to Горизонтальный.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Monitor_Chart_Options_LineType">
+            <summary>
+              Looks up a localized string similar to Линейный.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Monitor_Chart_Options_MapType">
+            <summary>
+              Looks up a localized string similar to Карта.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Monitor_Chart_Options_TableType">
+            <summary>
+              Looks up a localized string similar to Таблица.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Monitor_Chart_Options_VerticalType">
+            <summary>
+              Looks up a localized string similar to Вертикальный.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.MSTK_DataMartCaption">
+            <summary>
+              Looks up a localized string similar to Мониторинг состояния транспортного комплекса.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_dtMos">
+            <summary>
+              Looks up a localized string similar to Департамент транспорта г. Москвы.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_feddoragentstvo">
+            <summary>
+              Looks up a localized string similar to Федеральное дорожное агентство (Росавтодор) - Российская газета.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_fedzhdtrans">
+            <summary>
+              Looks up a localized string similar to Федеральное агентство железнодорожного транспорта (Росжелдор) - Российская газета.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_mintrans">
+            <summary>
+              Looks up a localized string similar to Министерство транспорта.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_mintranssvyaz">
+            <summary>
+              Looks up a localized string similar to Министерство транспорта - Российская газета.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_rbc">
+            <summary>
+              Looks up a localized string similar to РБК.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_rostransport">
+            <summary>
+              Looks up a localized string similar to Транспорт РФ.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_transvozdux">
+            <summary>
+              Looks up a localized string similar to Федеральное агентство воздушного транспорта (Росавиация) - Российская газета.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_vodntransport">
+            <summary>
+              Looks up a localized string similar to Федеральное агентство морского и речного транспорта (Росморречфлот) - Российская газета.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mstk_yandex">
+            <summary>
+              Looks up a localized string similar to Яндекс.Новости: Транспорт.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mtb_korrespondent">
+            <summary>
+              Looks up a localized string similar to &quot;Коммерсантъ&quot;. Происшествия.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mtb_rbc">
+            <summary>
+              Looks up a localized string similar to РБК.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mtb_ria">
+            <summary>
+              Looks up a localized string similar to Российское Информационное Агентство &quot;РИА Новости&quot;.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mtb_vesti">
+            <summary>
+              Looks up a localized string similar to ВЕСТИ.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.mtb_yandex">
+            <summary>
+              Looks up a localized string similar to Яндекс.Новости: Происшествия.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_Edit_Text">
+            <summary>
+              Looks up a localized string similar to Настройка показателей.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_General_Text">
+            <summary>
+              Looks up a localized string similar to Главная.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_IndicatorEdit_Text">
+            <summary>
+              Looks up a localized string similar to Реестр имущества.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_IndicatorWatch_Text">
+            <summary>
+              Looks up a localized string similar to Индикаторы.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_Media_Text">
+            <summary>
+              Looks up a localized string similar to Обзор СМИ.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_Member_Text">
+            <summary>
+              Looks up a localized string similar to Показатели.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_MemberValues_Text">
+            <summary>
+              Looks up a localized string similar to Значения показателей.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.Navigation_Objects_Text">
+            <summary>
+              Looks up a localized string similar to Объекты ТК.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.NoDataLabel">
+            <summary>
+              Looks up a localized string similar to Нет данных.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.OptionLabel">
+            <summary>
+              Looks up a localized string similar to Выберите справочник:.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.OptionMainLabel">
+            <summary>
+              Looks up a localized string similar to Выберите справочник для построения строк таблицы.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.PressPageTitle">
+            <summary>
+              Looks up a localized string similar to Пресса.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ProfValidRes_NoReqData">
+            <summary>
+              Looks up a localized string similar to Не заполнены обязательные поля.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ProfValRes_TooLongBlockDesc">
+            <summary>
+              Looks up a localized string similar to Слишком длинное описание блока.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ProfValRes_TooLongBlockName">
+            <summary>
+              Looks up a localized string similar to Слишком длинное наименование блока.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ProfValRes_TooLongDesc">
+            <summary>
+              Looks up a localized string similar to Слишком длинное описание.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.ProfValRes_TooLongName">
+            <summary>
+              Looks up a localized string similar to Слишком длинное наименование.
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.SelectMemberLabel">
+            <summary>
+              Looks up a localized string similar to Для отображения данных необходимо выбрать показатель или изменить условия фильтра..
+            </summary>
+        </member>
+        <member name="P:Mintrans.Mstk.Web.Resources.UnexpectedErrorInAction">
+            <summary>
+              Looks up a localized string similar to При выполнении действия произошла неожиданная ошибка. Подробная информация записана в журнал..
+            </summary>
+        </member>
+        <member name="T:Mintrans.Mstk.Web.UnityWebActivator">
+            <summary>Provides the bootstrapping for integrating Unity with ASP.NET MVC.</summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.UnityWebActivator.Start">
+            <summary>Integrates Unity when the application starts.</summary>
+        </member>
+        <member name="M:Mintrans.Mstk.Web.UnityWebActivator.Shutdown">
+            <summary>Disposes the Unity container when the application is shut down.</summary>
+        </member>
+    </members>
+</doc>

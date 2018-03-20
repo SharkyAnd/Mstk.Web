@@ -1,0 +1,9 @@
+﻿<!-- ko ifnot: isReadOnly -->
+<input type="checkbox" class="checkbox" style="display:inline-block" data-bind="checked: value, event: { change: selectionChanged.bind($data) }, enable: !isDisabled()" />
+<!-- /ko -->
+<!-- ko if: isReadOnly -->
+<div class="readonly-value" data-bind="text:displayValue">
+<!-- ko if: value -->Да<!-- /ko -->
+<!-- ko ifnot: value -->Нет<!-- /ko -->
+</div>
+<!-- /ko -->

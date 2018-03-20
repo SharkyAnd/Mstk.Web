@@ -1,0 +1,7 @@
+﻿<div data-bind="ifnot: isReadOnly">
+    <!-- ko with: value -->
+    <input type="file" class="form-control input-sm" accept="*/*"
+           data-bind="file: attachmentFile, fileObjectURL: fileObjectURL, imageBase64: file, imageType: fileType" />    
+    <!-- /ko -->
+</div>
+<div data-bind="if: isReadOnly"><div class="readonly-value" data-bind="text:value"></div></div>

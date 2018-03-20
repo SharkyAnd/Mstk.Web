@@ -1,0 +1,4 @@
+﻿<div data-bind="ifnot: isReadOnly">
+    <input type="text" class="form-control input-sm" data-bind="textInput: value">
+</div>
+<div data-bind="if: isReadOnly"><div class="readonly-value" data-bind="text:displayValue"></div></div>

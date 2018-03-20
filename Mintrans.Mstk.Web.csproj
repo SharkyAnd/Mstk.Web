@@ -1,0 +1,2131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--      ===          Property Groups          ===          -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32E5D7CF-0C04-4DC4-B723-B0A0314D4C30}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mintrans.Mstk.Web</RootNamespace>
+    <AssemblyName>Mintrans.Mstk.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+    <!--
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    -->
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.5.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.5.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.12\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc">
+      <HintPath>..\packages\Unity.Mvc.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\AsutkCommon\Bin\$(Configuration)\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
+      <HintPath>..\packages\System.IdentityModel.Tokens.ValidatingIssuerNameRegistry.4.5.1\lib\net45\System.IdentityModel.Tokens.ValidatingIssuerNameRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.EmbeddedSts">
+      <HintPath>..\packages\Thinktecture.IdentityModel.EmbeddedSts.1.0.2\lib\net45\Thinktecture.IdentityModel.EmbeddedSts.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\wkhtmltopdf-x86-win32.0.12.3.6\tools\wkhtmltopdf\wkhtmltopdf.exe">
+      <Link>wkhtmltopdf.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AccessDenied.html" />
+    <Content Include="App_Data\MenuConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include=".eslintrc" />
+    <None Include="App_Data\xsd.exe" />
+    <Content Include="App_Data\XmlDocumentation.xml" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-combobox.css" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\dx.android5.light.css" />
+    <Content Include="Content\dx.common.css" />
+    <Content Include="Content\dx.contrast.compact.css" />
+    <Content Include="Content\dx.contrast.css" />
+    <Content Include="Content\dx.dark.compact.css" />
+    <Content Include="Content\dx.dark.css" />
+    <Content Include="Content\dx.ios7.default.css" />
+    <Content Include="Content\dx.light.compact.css" />
+    <Content Include="Content\dx.light.css" />
+    <Content Include="Content\dx.spa.css" />
+    <Content Include="Content\dx.win10.black.css" />
+    <Content Include="Content\dx.win10.white.css" />
+    <Content Include="Content\dx.win8.black.css" />
+    <Content Include="Content\dx.win8.white.css" />
+    <Content Include="Content\switch.css" />
+    <TypeScriptCompile Include="Scripts\app\common\ui\modal.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\formula.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\parameters.ts" />
+    <TypeScriptCompile Include="Scripts\app\analytics\main.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\dataAccess.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\dataModels\api.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\dataModels\interfaces.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\mediator.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\models.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\properties.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\ui\propertyPages.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\statistics.ts" />
+    <Content Include="Scripts\flexmonster\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\flexmonster.js" />
+    <Content Include="Scripts\flexmonster\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\i18n\ru.json" />
+    <Content Include="Scripts\flexmonster\i18n\ua.json" />
+    <None Include="Scripts\flexmonster\i18n\en.json" />
+    <Content Include="Scripts\flexmonster\lib\canvg.min.js" />
+    <Content Include="Scripts\flexmonster\lib\d3.min.js" />
+    <Content Include="Scripts\flexmonster\lib\file.min.js" />
+    <Content Include="Scripts\flexmonster\lib\flexmonster.fusioncharts.js" />
+    <Content Include="Scripts\flexmonster\lib\flexmonster.googlecharts.js" />
+    <Content Include="Scripts\flexmonster\lib\flexmonster.highcharts.js" />
+    <Content Include="Scripts\flexmonster\lib\html2canvas.min.js" />
+    <Content Include="Scripts\flexmonster\lib\jquery.min.js" />
+    <Content Include="Scripts\flexmonster\lib\jspdf.min.js" />
+    <Content Include="Scripts\flexmonster\lib\jszip.min.js" />
+    <Content Include="Scripts\flexmonster\lib\promise.min.js" />
+    <Content Include="Scripts\flexmonster\lib\sha1.min.js" />
+    <Content Include="Scripts\flexmonster\lib\zlib.min.js" />
+    <Content Include="Scripts\flexmonster\theme\assets\flexmonster-icons.svg" />
+    <Content Include="Scripts\flexmonster\theme\lightblue\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\theme\lightblue\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\theme\mstk\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\theme\mstk\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\theme\old\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\theme\old\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\theme\orange\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\theme\orange\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\theme\teal\flexmonster.css" />
+    <Content Include="Scripts\flexmonster\theme\teal\flexmonster.min.css" />
+    <Content Include="Scripts\flexmonster\toolbar\flexmonster.toolbar.js" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\font-mstk.css" />
+    <Content Include="Content\font-mstk2.css" />
+    <Content Include="Content\HighchartExportCSS\png.css" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.css" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.html" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.js" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.css" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.html" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.js" />
+    <Content Include="Content\layouts\Popup\PopupLayout.css" />
+    <Content Include="Content\layouts\Popup\PopupLayout.html" />
+    <Content Include="Content\layouts\Popup\PopupLayout.js" />
+    <Content Include="Content\summernote.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap-combobox.js" />
+    <Content Include="htmltoimage\wkhtmltoimage.exe" />
+    <Content Include="Images\favicon.ASUTK.ico" />
+    <Content Include="Images\favicon.DEMO.ico" />
+    <Content Include="Images\slickgrid\collapse.gif" />
+    <Content Include="Images\slickgrid\down.gif" />
+    <Content Include="Images\slickgrid\expand.gif" />
+    <Content Include="Images\slickgrid\header-columns-bg.gif" />
+    <Content Include="Images\slickgrid\header-columns-over-bg.gif" />
+    <Content Include="Images\slickgrid\sort-asc.gif" />
+    <Content Include="Images\slickgrid\sort-desc.gif" />
+    <Content Include="Content\Site.Common.css" />
+    <Content Include="Content\Site.Demo.css" />
+    <Content Include="Content\Site.GISP.css" />
+    <Content Include="Content\slick.asutk.css" />
+    <Content Include="Content\slick-default-theme.css" />
+    <Content Include="Content\slick.columnpicker.css" />
+    <Content Include="Content\slick.grid.css" />
+    <Content Include="Content\slick.headerbuttons.css" />
+    <Content Include="Content\slick.headermenu.css" />
+    <Content Include="Content\slick.pager.css" />
+    <Content Include="fonts\mstk.svg" />
+    <Content Include="fonts\mstk2.svg" />
+    <Content Include="Images\ava.png" />
+    <Content Include="Images\diagram\rating.png" />
+    <Content Include="Images\diagram\column.png" />
+    <Content Include="Images\diagram\line.png" />
+    <Content Include="Images\diagram\map.png" />
+    <Content Include="Images\diagram\pie.png" />
+    <Content Include="Images\dots-anim-16.gif" />
+    <Content Include="Images\Drilldown.png" />
+    <Content Include="Images\favicon.GISP.ico" />
+    <Content Include="Images\loader-103.gif" />
+    <Content Include="Images\mtr-logo-eagle.png" />
+    <Content Include="Images\no-image-icon.png" />
+    <Content Include="Images\select2-spinner.gif" />
+    <Content Include="Images\select2.png" />
+    <Content Include="Images\select2x2.png" />
+    <Content Include="Content\select2-bootstrap.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\animated-overlay.gif" />
+    <Content Include="Images\application_edit.png" />
+    <Content Include="Images\AquaHeader.jpg" />
+    <Content Include="Images\BlackGlassHeader.jpg" />
+    <Content Include="Images\check_box.png" />
+    <Content Include="Images\check_box_mix.png" />
+    <Content Include="Images\check_box_uncheck.png" />
+    <Content Include="Images\close.jpg" />
+    <Content Include="Images\cross-small.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\cross10.png" />
+    <Content Include="Images\DXR.gif" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\edit_button.png" />
+    <Content Include="Images\file_extension_3gp.png" />
+    <Content Include="Images\file_extension_7z.png" />
+    <Content Include="Images\file_extension_ace.png" />
+    <Content Include="Images\file_extension_ai.png" />
+    <Content Include="Images\file_extension_aif.png" />
+    <Content Include="Images\file_extension_aiff.png" />
+    <Content Include="Images\file_extension_amr.png" />
+    <Content Include="Images\file_extension_asf.png" />
+    <Content Include="Images\file_extension_asx.png" />
+    <Content Include="Images\file_extension_bat.png" />
+    <Content Include="Images\file_extension_bin.png" />
+    <Content Include="Images\file_extension_bmp.png" />
+    <Content Include="Images\file_extension_bup.png" />
+    <Content Include="Images\file_extension_cab.png" />
+    <Content Include="Images\file_extension_cbr.png" />
+    <Content Include="Images\file_extension_cda.png" />
+    <Content Include="Images\file_extension_cdl.png" />
+    <Content Include="Images\file_extension_cdr.png" />
+    <Content Include="Images\file_extension_chm.png" />
+    <Content Include="Images\file_extension_dat.png" />
+    <Content Include="Images\file_extension_divx.png" />
+    <Content Include="Images\file_extension_dll.png" />
+    <Content Include="Images\file_extension_dmg.png" />
+    <Content Include="Images\file_extension_doc.png" />
+    <Content Include="Images\file_extension_dss.png" />
+    <Content Include="Images\file_extension_dvf.png" />
+    <Content Include="Images\file_extension_dwg.png" />
+    <Content Include="Images\file_extension_eml.png" />
+    <Content Include="Images\file_extension_eps.png" />
+    <Content Include="Images\file_extension_exe.png" />
+    <Content Include="Images\file_extension_fla.png" />
+    <Content Include="Images\file_extension_flv.png" />
+    <Content Include="Images\file_extension_gif.png" />
+    <Content Include="Images\file_extension_gz.png" />
+    <Content Include="Images\file_extension_hqx.png" />
+    <Content Include="Images\file_extension_htm.png" />
+    <Content Include="Images\file_extension_html.png" />
+    <Content Include="Images\file_extension_ifo.png" />
+    <Content Include="Images\file_extension_indd.png" />
+    <Content Include="Images\file_extension_iso.png" />
+    <Content Include="Images\file_extension_jar.png" />
+    <Content Include="Images\file_extension_jpeg.png" />
+    <Content Include="Images\file_extension_jpg.png" />
+    <Content Include="Images\file_extension_lnk.png" />
+    <Content Include="Images\file_extension_log.png" />
+    <Content Include="Images\file_extension_m4a.png" />
+    <Content Include="Images\file_extension_m4b.png" />
+    <Content Include="Images\file_extension_m4p.png" />
+    <Content Include="Images\file_extension_m4v.png" />
+    <Content Include="Images\file_extension_mcd.png" />
+    <Content Include="Images\file_extension_mdb.png" />
+    <Content Include="Images\file_extension_mid.png" />
+    <Content Include="Images\file_extension_mov.png" />
+    <Content Include="Images\file_extension_mp2.png" />
+    <Content Include="Images\file_extension_mp4.png" />
+    <Content Include="Images\file_extension_mpeg.png" />
+    <Content Include="Images\file_extension_mpg.png" />
+    <Content Include="Images\file_extension_msi.png" />
+    <Content Include="Images\file_extension_mswmm.png" />
+    <Content Include="Images\file_extension_ogg.png" />
+    <Content Include="Images\file_extension_pdf.png" />
+    <Content Include="Images\file_extension_png.png" />
+    <Content Include="Images\file_extension_pps.png" />
+    <Content Include="Images\file_extension_ps.png" />
+    <Content Include="Images\file_extension_psd.png" />
+    <Content Include="Images\file_extension_pst.png" />
+    <Content Include="Images\file_extension_ptb.png" />
+    <Content Include="Images\file_extension_pub.png" />
+    <Content Include="Images\file_extension_qbb.png" />
+    <Content Include="Images\file_extension_qbw.png" />
+    <Content Include="Images\file_extension_qxd.png" />
+    <Content Include="Images\file_extension_ram.png" />
+    <Content Include="Images\file_extension_rar.png" />
+    <Content Include="Images\file_extension_rm.png" />
+    <Content Include="Images\file_extension_rmvb.png" />
+    <Content Include="Images\file_extension_rtf.png" />
+    <Content Include="Images\file_extension_sea.png" />
+    <Content Include="Images\file_extension_ses.png" />
+    <Content Include="Images\file_extension_sit.png" />
+    <Content Include="Images\file_extension_sitx.png" />
+    <Content Include="Images\file_extension_ss.png" />
+    <Content Include="Images\file_extension_swf.png" />
+    <Content Include="Images\file_extension_tgz.png" />
+    <Content Include="Images\file_extension_thm.png" />
+    <Content Include="Images\file_extension_tif.png" />
+    <Content Include="Images\file_extension_tmp.png" />
+    <Content Include="Images\file_extension_torrent.png" />
+    <Content Include="Images\file_extension_ttf.png" />
+    <Content Include="Images\file_extension_txt.png" />
+    <Content Include="Images\file_extension_vcd.png" />
+    <Content Include="Images\file_extension_vob.png" />
+    <Content Include="Images\file_extension_wav.png" />
+    <Content Include="Images\file_extension_wma.png" />
+    <Content Include="Images\file_extension_wmv.png" />
+    <Content Include="Images\file_extension_wps.png" />
+    <Content Include="Images\file_extension_xls.png" />
+    <Content Include="Images\file_extension_xpi.png" />
+    <Content Include="Images\file_extension_zip.png" />
+    <Content Include="Images\generaldocument.gif" />
+    <Content Include="Images\GenericMovieClip.png" />
+    <Content Include="Images\Generic_Document.png" />
+    <Content Include="Images\generic_picture.png" />
+    <Content Include="Images\GlassHeader.jpg" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\list_white.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\member_disabled.png" />
+    <Content Include="Images\monitor_chart_type1.png" />
+    <Content Include="Images\monitor_chart_type1_select.png" />
+    <Content Include="Images\monitor_chart_type2.png" />
+    <Content Include="Images\monitor_chart_type2_select.png" />
+    <Content Include="Images\monitor_chart_type3.png" />
+    <Content Include="Images\monitor_chart_type3_select.png" />
+    <Content Include="Images\monitor_chart_type4.png" />
+    <Content Include="Images\monitor_chart_type4_select.png" />
+    <Content Include="Images\monitor_chart_type5.png" />
+    <Content Include="Images\monitor_member_check.png" />
+    <Content Include="Images\monitor_member_doc.png" />
+    <Content Include="Images\monitor_member_favorites.png" />
+    <Content Include="Images\monitor_member_uncheck.png" />
+    <Content Include="Images\monitor_member_unfavorites.png" />
+    <Content Include="Images\monitor_menu_all.png" />
+    <Content Include="Images\monitor_menu_all_select.png" />
+    <Content Include="Images\monitor_menu_car.png" />
+    <Content Include="Images\monitor_menu_car_select.png" />
+    <Content Include="Images\monitor_menu_item_background.png" />
+    <Content Include="Images\monitor_menu_plane.png" />
+    <Content Include="Images\monitor_menu_plane_select.png" />
+    <Content Include="Images\monitor_menu_ship.png" />
+    <Content Include="Images\monitor_menu_ship_select.png" />
+    <Content Include="Images\monitor_menu_train.png" />
+    <Content Include="Images\monitor_menu_train_select.png" />
+    <Content Include="Images\mtr-logo.png" />
+    <Content Include="Images\navigation_button_background.png" />
+    <Content Include="Images\navigation_button_left_arrow.png" />
+    <Content Include="Images\navigation_button_right_arrow.png" />
+    <Content Include="Images\pencil-button.png" />
+    <Content Include="Images\pencil.png" />
+    <Content Include="Images\pie_chart.png" />
+    <Content Include="Images\PlasticBlueHeader.jpg" />
+    <Content Include="Images\RedWineHeader.jpg" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\star-empty.png" />
+    <Content Include="Images\star-small-empty.png" />
+    <Content Include="Images\star-small.png" />
+    <Content Include="Images\star.png" />
+    <Content Include="Images\table.png" />
+    <Content Include="Images\table_white.png" />
+    <Content Include="Images\top-bg-blue.png" />
+    <Content Include="Images\top-blue-logo.png" />
+    <Content Include="Images\top-gisp-bg.png" />
+    <Content Include="Images\top-gisp-logo.png" />
+    <Content Include="Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Images\ui-icons_454545_256x240.png" />
+    <Content Include="Images\ui-icons_888888_256x240.png" />
+    <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery.ui.labeledslider.css" />
+    <Content Include="Content\Site.ASUTK.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="MainErrorPage.html" />
+    <Content Include="Scripts\app\changesHistory\actionLog.js" />
+    <Content Include="Scripts\app\common\dataViewer.js" />
+    <Content Include="Scripts\app\common\downloadHelper.js" />
+    <Content Include="Scripts\app\common\serverActions.js" />
+    <Content Include="Scripts\app\common\ui\menu.js" />
+    <Content Include="Scripts\app\common\workflows.js" />
+    <Content Include="Scripts\app\import\dimMemberWizard.js" />
+    <Content Include="Scripts\app\import\formMapping.js" />
+    <Content Include="Scripts\app\export\main.js" />
+    <Content Include="Scripts\app\import\periodicDatePicker.js" />
+    <Content Include="Scripts\app\import\importCampaign.js" />
+    <Content Include="Scripts\app\import\grid.js" />
+    <Content Include="Scripts\app\import\formConfig.js" />
+    <Content Include="Scripts\app\import\index.js" />
+    <Content Include="Scripts\app\import\models.js" />
+    <Content Include="Scripts\app\import\slick.editors.js" />
+    <Content Include="Scripts\app\filters\index.js" />
+    <Content Include="Scripts\app\filters\main.js" />
+    <Content Include="Scripts\app\common\dataAccess.js" />
+    <Content Include="Scripts\app\common\mediator.js" />
+    <Content Include="Scripts\app\common\ui\modal.js" />
+    <Content Include="Scripts\app\common\models.js" />
+    <Content Include="Scripts\app\common\ui\pager.js" />
+    <Content Include="Scripts\app\common\properties.js" />
+    <Content Include="Scripts\app\common\ui.js" />
+    <Content Include="Scripts\app\common\ui\propertyPages.js" />
+    <Content Include="Scripts\app\filters\shortcuts.js" />
+    <Content Include="Scripts\app\indicators\chartPane.js" />
+    <Content Include="Scripts\app\indicators\config.js" />
+    <Content Include="Scripts\app\indicators\dataService.js" />
+    <Content Include="Scripts\app\indicators\description.js" />
+    <Content Include="Scripts\app\indicators\editorModel.js" />
+    <Content Include="Scripts\app\indicators\index.js" />
+    <Content Include="Scripts\app\indicators\info.js" />
+    <Content Include="Scripts\app\indicators\main.js" />
+    <Content Include="Scripts\app\indicators\list.js" />
+    <Content Include="Scripts\app\indicators\passportPane.js" />
+    <TypeScriptCompile Include="Scripts\app\member\dataService.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\description.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\filters.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\dimensions.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\periods.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\permissions.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\viewer.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\index.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\main.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\list.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\documents.ts" />
+    <Content Include="Scripts\app\news\index.js" />
+    <Content Include="Scripts\app\news\main.js" />
+    <Content Include="Scripts\app\panels\dataService.js" />
+    <Content Include="Scripts\app\panels\models.js" />
+    <Content Include="Scripts\app\panels\selector.js" />
+    <Content Include="Scripts\app\panels\portfolio.js" />
+    <Content Include="Scripts\app\panels\wizard\dimensions.js" />
+    <Content Include="Scripts\app\panels\editors.js" />
+    <Content Include="Scripts\app\panels\index.js" />
+    <Content Include="Scripts\app\common\wizards.js" />
+    <Content Include="Scripts\app\panels\widgetWizard.js" />
+    <Content Include="Scripts\app\profile\widgetEditor.js" />
+    <Content Include="Scripts\app\profile\widgetCreator.js" />
+    <Content Include="Scripts\app\memberValues\editor.js" />
+    <Content Include="Scripts\app\watch\dataService.js" />
+    <Content Include="Scripts\app\watch\dynamics.js" />
+    <Content Include="Scripts\app\watch\utilities.js" />
+    <Content Include="Scripts\app\watch\views\dynamicsView.js" />
+    <Content Include="Scripts\app\watch\views\exporters.js" />
+    <Content Include="Scripts\app\watch\views\gridFilter.js" />
+    <Content Include="Scripts\app\watch\views\memberViews.js" />
+    <Content Include="Scripts\app\watch\views\dimensionViews.js" />
+    <Content Include="Scripts\app\watch\views.js" />
+    <Content Include="Scripts\app\watch\views\common.js" />
+    <TypeScriptCompile Include="Scripts\app\common\filters.ts" />
+    <Content Include="Scripts\app\watch\dimensionsPane.js" />
+    <TypeScriptCompile Include="Scripts\app\member\documentsPane.ts" />
+    <Content Include="Scripts\app\watch\info.js" />
+    <Content Include="Scripts\app\watch\main.js" />
+    <Content Include="Scripts\app\watch\index.js" />
+    <TypeScriptCompile Include="Scripts\app\member\passportPane.ts" />
+    <TypeScriptCompile Include="Scripts\app\member\passport.ts" />
+    <Content Include="Scripts\app\watch\resources.js" />
+    <Content Include="Scripts\app\watch\membersList.js" />
+    <Content Include="Scripts\app\watch\views\periods.js" />
+    <Content Include="Scripts\app\watch\views\text.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\class.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\app\core.js" />
+    <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\deparam.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.de.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.en.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.ja.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.ru.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.de.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.ja.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.ru.js" />
+    <Content Include="Scripts\dx.aspnet.mvc.js" />
+    <Content Include="Scripts\dx.viz-web.debug.js" />
+    <Content Include="Scripts\dx.viz-web.js" />
+    <Content Include="Scripts\dx.viz.debug.js" />
+    <Content Include="Scripts\dx.viz.js" />
+    <Content Include="Scripts\dx.web.debug.js" />
+    <Content Include="Scripts\dx.web.js" />
+    <Content Include="Scripts\excel-builder.js" />
+    <Content Include="Scripts\globalize.cultures.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\adapters\standalone-framework.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts-3d.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts-3d.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts-more.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts-more.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highcharts.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highmaps.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highmaps.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highstock.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\highstock.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\boost.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\boost.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\broken-axis.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\broken-axis.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\canvas-tools.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\data.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\data.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\drilldown.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\drilldown.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\exporting.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\exporting.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\funnel.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\funnel.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\heatmap.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\heatmap.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\map.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\map.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\no-data-to-display.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\offline-exporting.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\series-label.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\series-label.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\solid-gauge.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\treemap.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\modules\treemap.src.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\dark-blue.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\dark-green.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\dark-unica.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\gray.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\grid-light.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\grid.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\sand-signika.js" />
+    <Content Include="Scripts\HighCharts\4.2.7\themes\skies.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\adapters\standalone-framework.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\highcharts-3d.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\highcharts-all.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\css\highcharts.css" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-3d.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-3d.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-more.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-more.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highmaps.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\highmaps.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-3d.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-more.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-more.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highmaps.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highmaps.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\accessibility.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\accessibility.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\annotations.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\annotations.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost-canvas.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost-canvas.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\bullet.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\bullet.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\data.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\data.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drag-panes.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drag-panes.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drilldown.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\export-data.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\export-data.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\exporting.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\exporting.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\funnel.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\funnel.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\gantt.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\gantt.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\grid-axis.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\grid-axis.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\heatmap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\histogram-bellcurve.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\histogram-bellcurve.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\item-series.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\item-series.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\map.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\map.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\offline-exporting.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\oldie.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\oldie.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\overlapping-datalabels.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\parallel-coordinates.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\parallel-coordinates.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\pareto.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\pareto.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sankey.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sankey.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\static-scale.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\static-scale.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\stock.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\stock.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\streamgraph.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\streamgraph.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sunburst.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sunburst.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\tilemap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\tilemap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\treemap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\treemap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variable-pie.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variable-pie.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variwide.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variwide.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\vector.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\vector.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\windbarb.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\windbarb.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\wordcloud.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\wordcloud.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\xrange.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\xrange.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\avocado.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\avocado.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-blue.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-blue.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-green.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-green.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-unica.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-unica.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\gray.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\gray.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid-light.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid-light.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sand-signika.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sand-signika.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\skies.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\skies.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sunset.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sunset.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\canvg.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\canvg.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\jspdf.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\jspdf.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\rgbcolor.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\rgbcolor.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\svg2pdf.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\lib\svg2pdf.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\accessibility.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\accessibility.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\annotations.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\annotations.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost-canvas.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost-canvas.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\bullet.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\bullet.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\data.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\data.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drag-panes.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drag-panes.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drilldown.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drilldown.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\export-data.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\export-data.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\exporting.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\exporting.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\funnel.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\funnel.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\gantt.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\gantt.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\grid-axis.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\grid-axis.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\heatmap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\heatmap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\histogram-bellcurve.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\histogram-bellcurve.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\item-series.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\item-series.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\map.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\map.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\no-data-to-display.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\offline-exporting.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\oldie.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\oldie.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\overlapping-datalabels.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\overlapping-datalabels.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\parallel-coordinates.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\parallel-coordinates.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\pareto.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\pareto.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sankey.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sankey.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\static-scale.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\static-scale.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\stock.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\stock.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\streamgraph.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\streamgraph.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sunburst.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sunburst.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\tilemap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\tilemap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\treemap.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\treemap.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variable-pie.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variable-pie.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variwide.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variwide.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\vector.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\vector.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\windbarb.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\windbarb.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\wordcloud.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\wordcloud.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\xrange.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\xrange.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\readme.txt" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\avocado.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\avocado.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-blue.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-blue.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-green.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-green.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-unica.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-unica.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\gray.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\gray.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid-light.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid-light.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sand-signika.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sand-signika.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\skies.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\skies.src.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sunset.js" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sunset.src.js" />
+    <Content Include="Scripts\HighCharts\highcharts-export-clientside.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\highcharts-more.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\highcharts.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\highmaps.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\canvas-tools.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\data.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\drilldown.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\exporting.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\funnel.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\heatmap.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\map.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\no-data-to-display.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\offline-exporting.js" />
+    <Content Include="Scripts\HighCharts\4.1.10\modules\solid-gauge.js" />
+    <Content Include="Configuration\InitialRedirect.config" />
+    <Content Include="App_Data\EmbeddedStsUsers.json" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\HighCharts\ru-all-disputed.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\icons\dxiconsios.woff" />
+    <Content Include="Content\icons\dxiconsios.ttf" />
+    <Content Include="Content\icons\dxicons.woff" />
+    <Content Include="Content\icons\dxicons.ttf" />
+    <Content Include="Scripts\cldr\main\ru\ca-generic.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\ca-gregorian.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\currencies.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\dateFields.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\measurementSystemNames.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\numbers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\timeZoneNames.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\main\ru\units.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\cldr\supplemental\aliases.json" />
+    <Content Include="Scripts\cldr\supplemental\calendarData.json" />
+    <Content Include="Scripts\cldr\supplemental\calendarPreferenceData.json" />
+    <Content Include="Scripts\cldr\supplemental\characterFallbacks.json" />
+    <Content Include="Scripts\cldr\supplemental\codeMappings.json" />
+    <Content Include="Scripts\cldr\supplemental\currencyData.json" />
+    <Content Include="Scripts\cldr\supplemental\dayPeriods.json" />
+    <Content Include="Scripts\cldr\supplemental\gender.json" />
+    <Content Include="Scripts\cldr\supplemental\languageData.json" />
+    <Content Include="Scripts\cldr\supplemental\languageMatching.json" />
+    <Content Include="Scripts\cldr\supplemental\likelySubtags.json" />
+    <Content Include="Scripts\cldr\supplemental\measurementData.json" />
+    <Content Include="Scripts\cldr\supplemental\metaZones.json" />
+    <Content Include="Scripts\cldr\supplemental\numberingSystems.json" />
+    <Content Include="Scripts\cldr\supplemental\ordinals.json" />
+    <Content Include="Scripts\cldr\supplemental\parentLocales.json" />
+    <Content Include="Scripts\cldr\supplemental\plurals.json" />
+    <Content Include="Scripts\cldr\supplemental\primaryZones.json" />
+    <Content Include="Scripts\cldr\supplemental\references.json" />
+    <Content Include="Scripts\cldr\supplemental\telephoneCodeData.json" />
+    <Content Include="Scripts\cldr\supplemental\territoryContainment.json" />
+    <Content Include="Scripts\cldr\supplemental\territoryInfo.json" />
+    <Content Include="Scripts\cldr\supplemental\timeData.json" />
+    <Content Include="Scripts\cldr\supplemental\unitPreferenceData.json" />
+    <Content Include="Scripts\cldr\supplemental\weekData.json" />
+    <Content Include="Scripts\cldr\supplemental\windowsZones.json" />
+    <Content Include="Scripts\flexmonster\theme\assets\flexmonster-icons.ttf" />
+    <Content Include="Scripts\flexmonster\theme\assets\flexmonster-icons.woff" />
+    <Content Include="Scripts\flexmonster\theme\default\flexmonster.less" />
+    <Content Include="Scripts\flexmonster\theme\flexmonster-base.less" />
+    <Content Include="Scripts\flexmonster\theme\lightblue\flexmonster.less" />
+    <Content Include="Scripts\flexmonster\theme\old\flexmonster.less" />
+    <Content Include="Scripts\flexmonster\theme\orange\flexmonster.less" />
+    <Content Include="Scripts\flexmonster\theme\teal\flexmonster.less" />
+    <Content Include="Scripts\flexmonster\theme\mstk\flexmonster.less" />
+    <Content Include="Scripts\HighCharts\6.0.3\css\highcharts.scss" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-3d.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts-more.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\highcharts.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\highmaps.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-3d.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts-more.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highcharts.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\highmaps.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\accessibility.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\annotations.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost-canvas.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\boost.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\bullet.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\data.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drag-panes.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\drilldown.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\export-data.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\exporting.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\funnel.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\gantt.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\grid-axis.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\heatmap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\histogram-bellcurve.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\item-series.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\map.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\no-data-to-display.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\offline-exporting.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\oldie.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\overlapping-datalabels.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\parallel-coordinates.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\pareto.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sankey.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\static-scale.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\stock.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\streamgraph.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\sunburst.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\tilemap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\treemap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variable-pie.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\variwide.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\vector.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\windbarb.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\wordcloud.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\modules\xrange.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\avocado.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-blue.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-green.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\dark-unica.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\gray.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid-light.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\grid.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sand-signika.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\skies.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\js\themes\sunset.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\accessibility.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\annotations.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost-canvas.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\boost.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\bullet.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\data.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drag-panes.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\drilldown.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\export-data.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\exporting.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\funnel.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\gantt.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\grid-axis.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\heatmap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\histogram-bellcurve.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\item-series.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\map.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\no-data-to-display.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\offline-exporting.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\oldie.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\overlapping-datalabels.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\parallel-coordinates.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\pareto.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sankey.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\static-scale.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\stock.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\streamgraph.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\sunburst.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\tilemap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\treemap.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variable-pie.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\variwide.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\vector.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\windbarb.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\wordcloud.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\modules\xrange.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\avocado.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-blue.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-green.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\dark-unica.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\gray.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid-light.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\grid.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sand-signika.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\skies.js.map" />
+    <Content Include="Scripts\HighCharts\6.0.3\themes\sunset.js.map" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-migrate-3.0.0.js" />
+    <Content Include="Scripts\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\jquery.event.drag.js" />
+    <Content Include="Scripts\jquery.event.drag.live.js" />
+    <Content Include="Scripts\jquery.event.drag.live.min.js" />
+    <Content Include="Scripts\jquery.event.drag.min.js" />
+    <Content Include="Scripts\jquery.history.js" />
+    <Content Include="Scripts\jquery.slickgrid.export.excel.js" />
+    <Content Include="Scripts\jquery.ui.labeledslider.mod.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Configuration\AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Unity.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\mstk2.config.json" />
+    <Content Include="fonts\mstk2.eot" />
+    <Content Include="fonts\mstk2.ttf" />
+    <Content Include="fonts\mstk2.woff" />
+    <Content Include="fonts\mstk2.woff2" />
+    <Content Include="download\Памятка по формированию виджетов.docx" />
+    <!-- APPSettings-->
+    <None Include="Configuration\AppSettings.Base.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuration\AppSettings.ASUTK.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuration\AppSettings.ASUTK.TEST.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.ASUTK.DEV.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.ASUTK.PROD.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.GISP.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.GISP.DEMO.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.GISP.TEST.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.GISP.PROD.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.DEMO.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\AppSettings.DEMO.TEST.config">
+      <DependentUpon>AppSettings.Base.config</DependentUpon>
+    </None>
+    <!-- ConnectionStrings -->
+    <None Include="Configuration\ConnectionStrings.Base.config" />
+    <None Include="Configuration\ConnectionStrings.ASUTK.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.ASUTK.DEV.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.ASUTK.TEST.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.ASUTK.PROD.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.GISP.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.GISP.DEMO.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.GISP.TEST.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.GISP.PROD.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.DEMO.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\ConnectionStrings.DEMO.TEST.config">
+      <DependentUpon>ConnectionStrings.Base.config</DependentUpon>
+    </None>
+    <!-- Unity -->
+    <Content Include="Configuration\IdentityModel.services.config" />
+    <Content Include="Configuration\IdentityModel.config" />
+    <None Include="Configuration\Unity.Base.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuration\Unity.ASUTK.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.ASUTK.DEV.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.ASUTK.TEST.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.ASUTK.PROD.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.GISP.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.GISP.DEMO.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.GISP.TEST.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuration\Unity.GISP.PROD.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.DEMO.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\Unity.DEMO.TEST.config">
+      <DependentUpon>Unity.Base.config</DependentUpon>
+    </None>
+    <!-- IdentityModel -->
+    <None Include="Configuration\IdentityModel.Base.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuration\IdentityModel.ASUTK.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.ASUTK.DEV.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.ASUTK.TEST.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.ASUTK.PROD.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.GISP.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.GISP.DEMO.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.GISP.TEST.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.GISP.PROD.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.DEMO.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.DEMO.TEST.config">
+      <DependentUpon>IdentityModel.Base.config</DependentUpon>
+    </None>
+    <!-- IdentityModel.services -->
+    <None Include="Configuration\IdentityModel.services.Base.config" />
+    <None Include="Configuration\IdentityModel.services.ASUTK.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.ASUTK.TEST.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.ASUTK.DEV.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.ASUTK.PROD.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.GISP.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.GISP.DEMO.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.GISP.TEST.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.GISP.PROD.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.DEMO.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <None Include="Configuration\IdentityModel.services.DEMO.TEST.config">
+      <DependentUpon>IdentityModel.services.Base.config</DependentUpon>
+    </None>
+    <Content Include="download\Руководство пользователя_Монитор_АРМ Администратора.docx" />
+    <Content Include="download\Руководство пользователя_Монитор_АРМ Аналитика.docx" />
+    <Content Include="download\Руководство пользователя_Монитор_АРМ Оператора.docx" />
+    <Content Include="download\Руководство пользователя_Монитор_АРМ Руководителя.docx" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="download\export\data.csv" />
+    <Content Include="download\export\structure.csv" />
+    <Content Include="fonts\summernote.eot" />
+    <Content Include="fonts\summernote.ttf" />
+    <Content Include="fonts\summernote.woff" />
+    <None Include="Properties\PublishProfiles\ASUTK.DEV.pubxml" />
+    <None Include="Properties\PublishProfiles\ASUTK.PROD.pubxml" />
+    <None Include="Properties\PublishProfiles\ASUTK.TEST.pubxml" />
+    <None Include="Properties\PublishProfiles\DEMO.TEST.pubxml" />
+    <None Include="Properties\PublishProfiles\GISP.PROD.pubxml" />
+    <None Include="Properties\PublishProfiles\GISP.TEST.pubxml" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js.cookie.js" />
+    <Content Include="Scripts\jszip.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\knockout-highcharts.js" />
+    <Content Include="Scripts\knockout-jqueryui.js" />
+    <Content Include="Scripts\knockout.amdtemplateengine.js" />
+    <Content Include="Scripts\knockout.binding.summernote.js" />
+    <Content Include="Scripts\knockout.flexmonster.js" />
+    <Content Include="Scripts\knockout.popover.js" />
+    <Content Include="Scripts\knockout.bootstrap-datepicker.js" />
+    <Content Include="Scripts\knockout.extensions.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout.daterangepicker.js" />
+    <Content Include="Scripts\knockout.slickgrid.js" />
+    <Content Include="Scripts\knockout.validation.asutk.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\knockout.validation.min.js" />
+    <Content Include="Scripts\knockout.validation.min.js.map" />
+    <None Include="App_Data\MenuConfig.cmd" />
+    <None Include="App_Data\MenuConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="fonts\mstk.eot" />
+    <Content Include="fonts\mstk.ttf" />
+    <Content Include="fonts\mstk.woff" />
+    <Content Include="fonts\mstk.config.json" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\sha.js" />
+    <Content Include="Scripts\summernote\plugin\cleaner\bower.json" />
+    <Content Include="Scripts\summernote\plugin\cleaner\package.json" />
+    <Content Include="Scripts\summernote\plugin\cleaner\README.md" />
+    <Content Include="Scripts\typings\requirejs\README.md" />
+    <Content Include="Scripts\typings\jquery\README.md" />
+    <Content Include="Scripts\typings\jquery\tslint.json" />
+    <Content Include="Scripts\typings\highcharts\tslint.json" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\jquery.ui.labeledslider.js" />
+    <Content Include="Scripts\knockout-select2.js" />
+    <Content Include="Scripts\knockout-select2.min.js" />
+    <None Include="Scripts\linq-vsdoc.js" />
+    <Content Include="Scripts\linq.js" />
+    <Content Include="Scripts\linq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Select2-locales\select2_locale_ru.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\signals.js" />
+    <Content Include="Scripts\SlickGrid\Controls\slick.columnpicker.js" />
+    <Content Include="Scripts\SlickGrid\Controls\slick.pager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.tooltips.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.autotooltips.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellcopymanager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellrangedecorator.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellrangeselector.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellselectionmodel.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.checkboxselectcolumn.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.headerbuttons.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.headermenu.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.rowmovemanager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.rowselectionmodel.js" />
+    <Content Include="Scripts\SlickGrid\slick.core.js" />
+    <Content Include="Scripts\SlickGrid\slick.dataview.js" />
+    <Content Include="Scripts\SlickGrid\slick.editors.js" />
+    <Content Include="Scripts\SlickGrid\slick.formatters.js" />
+    <Content Include="Scripts\SlickGrid\slick.grid.js" />
+    <Content Include="Scripts\SlickGrid\slick.groupitemmetadataprovider.js" />
+    <Content Include="Scripts\SlickGrid\slick.remotemodel.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="Scripts\summernote\lang\summernote-ru-RU.min.js" />
+    <Content Include="Scripts\summernote\plugin\databasic\summernote-ext-databasic.css" />
+    <Content Include="Scripts\summernote\plugin\databasic\summernote-ext-databasic.js" />
+    <Content Include="Scripts\summernote\plugin\databasic\summernote-ext-databasic.min.css" />
+    <Content Include="Scripts\summernote\plugin\databasic\summernote-ext-databasic.min.js" />
+    <Content Include="Scripts\summernote\plugin\hello\summernote-ext-hello.js" />
+    <Content Include="Scripts\summernote\plugin\hello\summernote-ext-hello.min.js" />
+    <Content Include="Scripts\summernote\plugin\specialchars\summernote-ext-specialchars.js" />
+    <Content Include="Scripts\summernote\plugin\specialchars\summernote-ext-specialchars.min.js" />
+    <Content Include="Scripts\summernote\plugin\cleaner\summernote-cleaner.js" />
+    <Content Include="Scripts\summernote\summernote.js" />
+    <Content Include="Scripts\summernote\summernote.min.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\vectormap-data\africa.js" />
+    <Content Include="Scripts\vectormap-data\canada.js" />
+    <Content Include="Scripts\vectormap-data\eurasia.js" />
+    <Content Include="Scripts\vectormap-data\europe.js" />
+    <Content Include="Scripts\vectormap-data\usa.js" />
+    <Content Include="Scripts\vectormap-data\world.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
+    <Content Include="SessionTimeout.html" />
+    <Content Include="Themes\general\HighCharts\dark-blue.js" />
+    <Content Include="Themes\general\HighCharts\dark-green.js" />
+    <Content Include="Themes\general\HighCharts\dark-unica.js" />
+    <Content Include="Themes\general\HighCharts\gray.js" />
+    <Content Include="Themes\general\HighCharts\grid-light.js" />
+    <Content Include="Themes\general\HighCharts\grid.js" />
+    <Content Include="Themes\general\HighCharts\sand-signika.js" />
+    <Content Include="Themes\general\HighCharts\skies.js" />
+    <Content Include="Themes\general\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_000000_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_007cdd_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_ECF0F4_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_f5f7f9_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_fef1ec_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-bg_flat_50_ffffff_40x100.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-icons_007cdd_256x240.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Themes\general\jQueryUI\images\ui-icons_f5f7f9_256x240.png" />
+    <Content Include="Themes\general\jQueryUI\theme.css" />
+    <Content Include="Themes\general\theme.css" />
+    <Content Include="Themes\readme.txt" />
+    <Content Include="Scripts\app\watch\chartPaneV2.js" />
+    <Content Include="wkhtmltopdf-license.txt" />
+    <Content Include="wkhtmltopdf\bin\wkhtmltopdf.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="~App_Offline.htm" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Diagnostics.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <TypeScriptCompile Include="Scripts\app\pivot\charts.ts" />
+    <TypeScriptCompile Include="Scripts\app\pivot\cubes.ts" />
+    <TypeScriptCompile Include="Scripts\app\pivot\toolbar.ts" />
+    <TypeScriptCompile Include="Scripts\app\pivot\contextMenu.ts" />
+    <TypeScriptCompile Include="Scripts\app\router.ts" />
+    <TypeScriptCompile Include="Scripts\app\watch\chartPaneV2.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\watch\dimensionsPane.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\Class.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-more.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highstock.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\modules\boost.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\modules\exporting.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\modules\map\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\modules\no-data-to-display.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\modules\offline-exporting.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\boost.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\exporting.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\highstock.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\index.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\more.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\no-data-to-display.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\test\offline-exporting.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signals\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signals\signals-tests.ts" />
+    <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\underscore\underscore.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\UnderConstruction.cshtml" />
+    <Content Include="Views\Watch\Index.cshtml" />
+    <Content Include="Views\Shared\_mainLayout.cshtml" />
+    <Content Include="Views\Indicators\Index.cshtml" />
+    <Content Include="Views\Login\_LoginPartial.cshtml" />
+    <Content Include="Views\Templates\watch\dimensionsPane.cshtml" />
+    <Content Include="Views\Templates\watch\membersPane.cshtml" />
+    <Content Include="Views\Shared\_coreJS.cshtml" />
+    <Content Include="Views\Templates\comboBox.cshtml" />
+    <Content Include="Views\Templates\watch\rootMember.cshtml" />
+    <Content Include="Views\Templates\watch\childMember.cshtml" />
+    <Content Include="Views\Templates\watch\dimension.cshtml" />
+    <Content Include="Views\Templates\pager.cshtml" />
+    <Content Include="Views\Templates\shared\genericModal.cshtml" />
+    <Content Include="Views\Templates\watch\comparableMembers.cshtml" />
+    <Content Include="Views\Templates\watch\dimMember.cshtml" />
+    <Content Include="Views\Templates\watch\comparableDimMembers.cshtml" />
+    <Content Include="Views\Templates\member\passport.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\boolean.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\booleanWithTitle.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\choice.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\date.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\lookup.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\number.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\string.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\text.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\year.cshtml" />
+    <Content Include="Views\Templates\member\passportPane.cshtml" />
+    <Content Include="Views\Templates\shared\propertyPages.cshtml" />
+    <Content Include="Views\Templates\watch\chartPaneV2.cshtml" />
+    <Content Include="Views\Templates\member\documentsPane.cshtml" />
+    <Content Include="Views\Templates\shared\dataObjectEditor.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\attachment.cshtml" />
+    <Content Include="Views\Templates\profile\widgetEditor.cshtml" />
+    <Content Include="Views\Templates\shared\propertyEditor.cshtml" />
+    <Content Include="Views\Shared\_header.GISP.cshtml" />
+    <Content Include="Views\Templates\memberValues\editor.cshtml" />
+    <Content Include="Views\Templates\shared\treeNode.cshtml" />
+    <Content Include="Views\Templates\shared\tree.cshtml" />
+    <Content Include="Views\Templates\shared\filter.cshtml" />
+    <Content Include="Views\Templates\indicators\list.cshtml" />
+    <Content Include="Views\Templates\indicators\passportPane.cshtml" />
+    <Content Include="Views\Templates\indicators\documents.cshtml" />
+    <Content Include="Views\Watch\PdfReport.cshtml" />
+    <Content Include="Views\Shared\Pdf.cshtml" />
+    <Content Include="Views\Indicators\PdfReport.cshtml" />
+    <Content Include="Views\Templates\watch\dimMemberInCompare.cshtml" />
+    <Content Include="Views\Templates\watch\comparableRootMember.cshtml" />
+    <Content Include="Views\Templates\watch\comparableChildMember.cshtml" />
+    <Content Include="Views\Templates\watch\info.cshtml" />
+    <Content Include="Views\Templates\shared\oneButtonModal.cshtml" />
+    <Content Include="Views\Templates\member\passportField.cshtml" />
+    <Content Include="Views\Templates\member\passportFieldLink.cshtml" />
+    <Content Include="Views\Templates\indicators\info.cshtml" />
+    <Content Include="Views\Templates\indicators\passportField.cshtml" />
+    <Content Include="Views\Templates\indicators\passportArray.cshtml" />
+    <Content Include="Views\Templates\member\rootMember.cshtml" />
+    <Content Include="Views\Templates\member\childMember.cshtml" />
+    <Content Include="Views\Templates\member\list.cshtml" />
+    <Content Include="Views\Templates\member\viewer.cshtml" />
+    <Content Include="Views\Admin\Members.cshtml" />
+    <Content Include="Views\Templates\member\periods.cshtml" />
+    <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Templates\member\filtersPane.cshtml" />
+    <Content Include="Views\Templates\member\filterTree.cshtml" />
+    <Content Include="Views\Templates\member\filterNode.cshtml" />
+    <Content Include="Views\Templates\member\dimensions.cshtml" />
+    <Content Include="Views\Templates\member\permissionsPane.cshtml" />
+    <Content Include="Views\Shared\PageAccessDenied.cshtml" />
+    <Content Include="Views\Admin\Filters.cshtml" />
+    <Content Include="Views\Templates\filters\treeTable.cshtml" />
+    <Content Include="Views\Templates\filters\treeTableRow.cshtml" />
+    <Content Include="Views\Templates\filters\index.cshtml" />
+    <Content Include="Views\Templates\filters\tree.cshtml" />
+    <Content Include="Views\Templates\filters\treeNode.cshtml" />
+    <Content Include="Views\Templates\filters\members.cshtml" />
+    <Content Include="Views\Templates\watch\tabAll.cshtml" />
+    <Content Include="Views\Templates\watch\tabFavorites.cshtml" />
+    <Content Include="Views\Templates\watch\tabCompare.cshtml" />
+    <Content Include="Views\Templates\shared\menuItem.cshtml" />
+    <Content Include="Views\Templates\shared\menuDivider.cshtml" />
+    <Content Include="Views\Templates\shared\menu.cshtml" />
+    <Content Include="Views\Shared\_highchartsSettings.cshtml" />
+    <Content Include="Views\Templates\watch\dynInfo.cshtml" />
+    <Content Include="Views\Templates\watch\dyn.cshtml" />
+    <Content Include="Views\Templates\watch\dynChart.cshtml" />
+    <Content Include="Views\Templates\watch\dynValue.cshtml" />
+    <Content Include="Views\Templates\watch\dynIndicator.cshtml" />
+    <Content Include="Views\Templates\indicators\chartPane.cshtml" />
+    <Content Include="Views\Templates\watch\dynComparisons.cshtml" />
+    <Content Include="Views\Templates\member\parentProperty.cshtml" />
+    <Content Include="Views\Templates\indicators\indicatorCreator.cshtml" />
+    <Content Include="Views\Templates\shared\viewCommands.cshtml" />
+    <Content Include="Views\Shared\_header.ASUTK.cshtml" />
+    <Content Include="Views\Templates\filters\flag.cshtml" />
+    <Content Include="Views\Press\News.cshtml" />
+    <Content Include="Views\Templates\news\content.cshtml" />
+    <Content Include="Views\Templates\shared\chartTypeSelector.cshtml" />
+    <Content Include="Views\Templates\filters\shortcuts.cshtml" />
+    <Content Include="Views\Import\Import.cshtml" />
+    <Content Include="Views\Shared\_navigation.cshtml" />
+    <Content Include="Views\Panels\Index.cshtml" />
+    <Content Include="Views\Templates\panels\widget.cshtml" />
+    <Content Include="Views\Templates\panels\selector.cshtml" />
+    <Content Include="Views\Import\FormConfig.cshtml" />
+    <Content Include="Views\Templates\shared\dataBrowser.cshtml" />
+    <Content Include="Views\Templates\import\configEditor.cshtml" />
+    <Content Include="Views\Import\Campaign.cshtml" />
+    <Content Include="Views\Templates\import\dataEditor.cshtml" />
+    <Content Include="Views\Templates\import\periodicDatePicker.cshtml" />
+    <Content Include="Views\Templates\import\periodicPickerContent.cshtml" />
+    <Content Include="Views\Templates\panels\main.cshtml" />
+    <Content Include="Views\Templates\panels\panelEditor.cshtml" />
+    <Content Include="Views\Templates\panels\propertyEditor.cshtml" />
+    <Content Include="Views\Templates\watch\dynWidget.cshtml" />
+    <Content Include="Views\Templates\shared\loadingPanel.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\booleanSelector.cshtml" />
+    <Content Include="Views\Shared\_header.DEMO.cshtml" />
+    <Content Include="Views\Templates\views\highcharts.cshtml" />
+    <Content Include="Views\Templates\views\table.cshtml" />
+    <Content Include="Views\Templates\views\grid.cshtml" />
+    <Content Include="Views\Templates\shared\confirmModalTemplate.cshtml" />
+    <Content Include="Views\Templates\import\calendarEditor.cshtml" />
+    <Content Include="Views\Templates\shared\wizard\modal.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\chooseMember.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\chooseDimMembers.cshtml" />
+    <Content Include="Views\Templates\shared\wizard\page.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\chooseWidgetType.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\chooseIndicator.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\chooseMembersForComparison.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\preview.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\finish.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\previewDimension.cshtml" />
+    <Content Include="Views\Warmup\Index.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\summary.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\summary_scalar.cshtml" />
+    <Content Include="Views\Templates\panels\wizard\summary_arrayOfObject.cshtml" />
+    <Content Include="Views\Templates\panels\exportToPortfolio.cshtml" />
+    <Content Include="Views\Admin\Export.cshtml" />
+    <Content Include="Views\Templates\export\index.cshtml" />
+    <Content Include="Views\Templates\export\dataSetPassport.cshtml" />
+    <Content Include="Views\Templates\export\passportField.cshtml" />
+    <Content Include="Views\Templates\export\passportFieldLink.cshtml" />
+    <Content Include="Views\Templates\import\formMappingsEditor.cshtml" />
+    <Content Include="Views\Templates\import\wizard\chooseMember.cshtml" />
+    <Content Include="Views\Templates\import\wizard\selectSearchPanel.cshtml" />
+    <Content Include="Views\Templates\views\slider.cshtml" />
+    <Content Include="Views\Templates\views\dayrange.cshtml" />
+    <Content Include="Views\Templates\views\weekrange.cshtml" />
+    <Content Include="Views\Templates\views\dayselector.cshtml" />
+    <Content Include="Views\Templates\views\weekselector.cshtml" />
+    <Content Include="Views\Templates\import\campaignMappingEditor.cshtml" />
+    <Content Include="Views\Templates\import\campaignOrgsList.cshtml" />
+    <Content Include="Views\Watch\PanelPdfReport.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\html.cshtml" />
+    <Content Include="Views\Templates\views\textPreview.cshtml" />
+    <Content Include="Views\Templates\import\importFormNameCell.cshtml" />
+    <Content Include="Views\Templates\watch\gridFilter.cshtml" />
+    <Content Include="Views\Templates\watch\firstNFilter.cshtml" />
+    <Content Include="Views\Templates\changesHistory\actionLog.cshtml" />
+    <Content Include="Views\ChangesHistory\ActionLog.cshtml" />
+    <Content Include="Views\Templates\shared\dxTable.cshtml" />
+    <Content Include="Views\Templates\watch\tabAddToChart.cshtml" />
+    <Content Include="Views\Templates\watch\appendableMembers.cshtml" />
+    <Content Include="Views\ChangesHistory\AutomationLog.cshtml" />
+    <Content Include="Views\Pivot\Table.cshtml" />
+    <Content Include="Views\Templates\pivot\table.cshtml" />
+    <Content Include="Views\Templates\member\statisticsPane.cshtml" />
+    <Content Include="Views\ChangesHistory\PortfolioLog.cshtml" />
+    <Content Include="Views\Templates\member\parametersPane.cshtml" />
+    <Content Include="Views\Templates\member\commonParameters.cshtml" />
+    <Content Include="Views\Templates\member\permissions.cshtml" />
+    <Content Include="Views\Templates\member\usagePermissions.cshtml" />
+    <Content Include="Views\Templates\shared\passportModal.cshtml" />
+    <Content Include="Views\Admin\Analytics.cshtml" />
+    <Content Include="Views\Templates\analytics\index.cshtml" />
+    <Content Include="Views\Templates\analytics\newStatistics.cshtml" />
+    <Content Include="Views\Templates\analytics\filtersModal.cshtml" />
+    <Content Include="Views\Templates\member\puPermissions.cshtml" />
+    <Content Include="Views\Templates\propertyEditors\booleanSwitch.cshtml" />
+    <Content Include="Views\Templates\member\passportFieldIsActual.cshtml" />
+    <Content Include="Views\Templates\shared\confirmModal.cshtml" />
+    <Content Include="Views\Templates\member\miniPassport.cshtml" />
+    <Content Include="Views\Templates\analytics\usageStatistics.cshtml" />
+    <Content Include="Views\Templates\analytics\statistics.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="Views\Templates\member\formulaBlock.cshtml" />
+    <Content Include="Views\Templates\pivot\cubesSelector.cshtml" />
+    <Content Include="Views\Templates\member\formulaEditor.cshtml" />
+    <Content Include="Views\Templates\pivot\highcharts.cshtml" />
+    <Content Include="Views\Templates\member\formulaPreview.cshtml" />
+    <Content Include="Views\Templates\member\dimension.cshtml" />
+    <None Include="Web.ASUTK Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ASUTK.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ASUTK.DEV.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ASUTK.PROD.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ASUTK.TEST.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.GISP Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.GISP.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.GISP.DEMO.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.GISP.TEST.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.GISP.PROD.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.DEMO.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.DEMO.TEST.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\TemplateBundle.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Api\AnalyticsApiController.cs" />
+    <Compile Include="Controllers\Api\MemberFormulaController.cs" />
+    <Compile Include="Controllers\PivotController.cs" />
+    <Compile Include="Controllers\ChangesHistoryController.cs" />
+    <Compile Include="Controllers\HearthbeatController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\ImportCampaignController.cs" />
+    <Compile Include="Controllers\ImportFormConfigController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\Api\MemberIndicatorsApiController.cs" />
+    <Compile Include="Controllers\AccessDeniedController.cs" />
+    <Compile Include="Controllers\Api\AccessControlController.cs" />
+    <Compile Include="Controllers\Api\FavoriteMembersController.cs" />
+    <Compile Include="Controllers\Api\IndicatorsApiController.cs" />
+    <Compile Include="Controllers\Api\MembersApiController.cs" />
+    <Compile Include="Controllers\Api\MemberValuesApiController.cs" />
+    <Compile Include="Controllers\Api\FiltersApiController.cs" />
+    <Compile Include="Controllers\Api\DimensionsController.cs" />
+    <Compile Include="Controllers\Api\MemberPermissionsController.cs" />
+    <Compile Include="Controllers\Api\NewsApiController.cs" />
+    <Compile Include="Controllers\Api\OUApiController.cs" />
+    <Compile Include="Controllers\Api\PanelsApiController.cs" />
+    <Compile Include="Controllers\Api\WidgetsApiController.cs" />
+    <Compile Include="Controllers\Api\SourceSystemsApiController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Api\WatchApiController.cs" />
+    <Compile Include="Controllers\ImportMappingController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Api\MemberFiltersController.cs" />
+    <Compile Include="Controllers\Api\MemberDimensionsController.cs" />
+    <Compile Include="Controllers\Api\MemberPeriodsController.cs" />
+    <Compile Include="Controllers\Api\MstkApiControllerBase.cs" />
+    <Compile Include="Controllers\MvcRazorToPdf.cs" />
+    <Compile Include="Controllers\MvcRazorToPdfExtensions.cs" />
+    <Compile Include="Controllers\IndicatorsController.cs" />
+    <Compile Include="Controllers\PanelsController.cs" />
+    <Compile Include="Controllers\PdfActionResult.cs" />
+    <Compile Include="Controllers\PdfReportActionResult.cs" />
+    <Compile Include="Controllers\Api\PeriodsApiController.cs" />
+    <Compile Include="Controllers\PngActionResult.cs" />
+    <Compile Include="Controllers\PressController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
+    <Compile Include="Controllers\Api\UnitsApiController.cs" />
+    <Compile Include="Controllers\WarmupController.cs" />
+    <Compile Include="CorsOptionsModule.cs" />
+    <Compile Include="Models\ExportPanelToPdfRequestViewModel.cs" />
+    <Compile Include="Models\ModelExtensions.cs" />
+    <Compile Include="Models\OperationResult.cs" />
+    <Compile Include="Controllers\WatchController.cs" />
+    <Compile Include="Models\AuthorizeRoles.cs" />
+    <Compile Include="PdfConvert.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\MstkControllerBase.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MstkHandleErrorAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnityResolver.cs" />
+    <Compile Include="UrlHelperExtensions.cs" />
+    <Compile Include="WrappedJsonResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mintrans.Asutk.Common\Mintrans.Asutk.Common.csproj">
+      <Project>{58E411A3-0B30-46F1-ADE4-C2B1EBCDDE33}</Project>
+      <Name>Mintrans.Asutk.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Asutk.UnityContainer\Mintrans.Asutk.UnityContainer.csproj">
+      <Project>{19FED80F-8081-4F40-B8D1-AE8E02C99470}</Project>
+      <Name>Mintrans.Asutk.UnityContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Core\Mintrans.Mstk.Core.csproj">
+      <Project>{3deadfa8-4dff-4c07-92e0-e39f48570cb9}</Project>
+      <Name>Mintrans.Mstk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Data.Export\Mintrans.Mstk.Data.Export.csproj">
+      <Project>{85356fb8-a46f-4292-8b94-abec19be4f2d}</Project>
+      <Name>Mintrans.Mstk.Data.Export</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Data.Oracle\Mintrans.Mstk.Data.Oracle.csproj">
+      <Project>{3debe94b-9a5f-4405-86d5-ab72fffd5256}</Project>
+      <Name>Mintrans.Mstk.Data.Oracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Data.Pgsql\Mintrans.Mstk.Data.Pgsql.csproj">
+      <Project>{6f509a76-8db9-40d6-a515-4378c8cd4d40}</Project>
+      <Name>Mintrans.Mstk.Data.Pgsql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Data\Mintrans.Mstk.Data.csproj">
+      <Project>{7f180473-35d9-4447-967d-8e83292a7159}</Project>
+      <Name>Mintrans.Mstk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mintrans.Mstk.Web.Business\Mintrans.Mstk.Web.Business.csproj">
+      <Project>{354acdb1-351e-4013-8e99-83eab0784749}</Project>
+      <Name>Mintrans.Mstk.Web.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\tmp\" />
+    <Folder Include="Scripts\typings\devextreme\" />
+    <Folder Include="Scripts\typings\js-signals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\common\ui.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\core.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\pivot\table.view.ts" />
+    <TypeScriptCompile Include="Scripts\typings\flexmonster\flexmonster.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ASUTK|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>App_Data\XmlDocumentation.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ASUTK.DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ASUTK.TEST|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ASUTK.PROD|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GISP|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>App_Data\XmlDocumentation.xml</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEMO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>App_Data\XmlDocumentation.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GISP.DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GISP.PROD|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GISP.TEST|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEMO.TEST|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>App_Data\XmlDocumentation.xml</DocumentationFile>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GISP.DEMO|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27938</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27938/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="BeforeBuild" Condition="'$(PublishProfileName)' == '' And '$(WebPublishProfileFile)' == ''">
+    <TransformXml Source="Web.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
+    <TransformXml Source="Configuration\AppSettings.Base.config" Transform="Configuration\AppSettings.$(Configuration).config" Destination="Configuration\AppSettings.config" />
+    <TransformXml Source="Configuration\ConnectionStrings.Base.config" Transform="Configuration\ConnectionStrings.$(Configuration).config" Destination="Configuration\ConnectionStrings.config" />
+    <TransformXml Source="Configuration\Unity.Base.config" Transform="Configuration\Unity.$(Configuration).config" Destination="Configuration\Unity.config" />
+    <TransformXml Source="Configuration\IdentityModel.Base.config" Transform="Configuration\IdentityModel.$(Configuration).config" Destination="Configuration\IdentityModel.config" />
+    <TransformXml Source="Configuration\IdentityModel.services.Base.config" Transform="Configuration\IdentityModel.services.$(Configuration).config" Destination="Configuration\IdentityModel.services.config" />
+  </Target>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

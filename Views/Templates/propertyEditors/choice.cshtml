@@ -1,0 +1,5 @@
+﻿<div data-bind="ifnot: isReadOnly">
+    <select class="form-control input-sm" 
+            data-bind="value: value, options: choices, optionsText: 'text', optionsValue: 'value', disable: isDisabled"></select>
+</div>
+<div data-bind="if: isReadOnly"><div class="readonly-value" data-bind="text:displayValue"></div></div>

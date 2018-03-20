@@ -1,0 +1,8 @@
+﻿<div class="form-horizontal" data-bind="foreach:properties, css: { 'hidden-validation-messages': isValidationMessagesHidden }">
+    <!-- ko if: isVisible -->
+    <!-- ko template: 'shared/propertyEditor' --><!-- /ko -->
+    <!-- /ko -->
+</div>
+<h5 style="font-style:italic;color:lightgray">
+    *Будет сформирован список показателей, присутствующих в портфеле выбранного пользователя
+</h5>

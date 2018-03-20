@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuCollection xmlns="http://asutk.ru/schemas/menu"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://asutk.ru/schemas/menu MenuConfig.xsd">
+
+  <Menu Id="NAVIGATION">
+    <Item Title="Показатели" Url="~/watch"/>
+    <Item Title="Индикаторы" Url="~/indicators"/>
+    <Item Title="Витрины данных" Url="~/pivot/table" Role="AdminRole;AnalystRole;ManagerRole"/>
+    <Item Title="Аналитические панели" Url="~/panels" Role="AdminRole;AnalystRole;ManagerRole"/>
+    <Item Title="История изменений" Url="~/changesHistory/actionLog" Role="AdminRole">
+      <Item Title="Действия пользователей" Url="~/changesHistory/actionLog" Role="AdminRole"/>
+      <Item Title="Автоматические загрузки" Url="~/changesHistory/automationLog" Role="AdminRole"/>
+      <Item Title="Портфель руководителя" Url="~/changesHistory/portfolioLog" Role="AdminRole"/>
+    </Item>   
+    <Item Title="Обзор СМИ" Url="~/press" Role="AdminRole;ManagerRole" BuildType="ASUTK"/>
+    <Item Title="Сбор данных" Url="~/import/load" Role="AdminRole;AnalystRole" BuildType="ASUTK">
+      <Item Title="Ввод данных" Url="~/import/load"/>
+      <Item Title="Настройка кампаний" Url="~/import/campaign" Role="AdminRole"/>
+      <Item Title="Конфигуратор форм" Url="~/import/formconfig" Role="AdminRole"/>
+    </Item>
+    <Item Title="Администрирование" Url="~/admin/members" Role="AdminRole">
+      <Item Title="Показатели" Url="~/admin/members"/>
+      <Item Title="Фильтры" Url="~/admin/filters"/>
+      <Item Title="Экспорт открытых данных" Url="~/admin/export"/>
+      <Item Title="Сводная аналитика" Url="~/admin/analytics"/>
+    </Item>
+  </Menu>
+
+  <Menu Id="USER">
+    <Item Id="Portal" BuildType="ASUTK" Title="Личный кабинет" Icon="fa fa-fw fa-user" Url="ExitUrl"/>
+    <Item Id="SignOut" BuildType="GISP" Title="Выход" Icon="fa fa-fw fa-sign-out" Url="ExitUrl"/>
+    <Item Id="SignOut" BuildType="DEMO" Title="Выход" Icon="fa fa-fw fa-sign-out" Url="ExitUrl"/>
+    <Item Title="-"/>
+    <Item Id="Guides" Title="Руководство:" Icon="fa fa-fw fa-question-circle"/>
+      <Item Id="UserGuide-Admin" Title="— АРМ Администратора" Target="_blank" Url="UserGuide-Admin" Role="AdminRole"/>
+      <Item Id="UserGuide-Manager" Title="— АРМ Руководителя" Target="_blank" Url="UserGuide-Manager" Role="ManagerRole"/>
+      <Item Id="UserGuide-Operator" Title="— АРМ Оператора" Target="_blank" Url="UserGuide-Operator" Role="OperatorRole"/>
+      <Item Id="UserGuide-Analyst" Title="— АРМ Аналитика" Target="_blank" Url="UserGuide-Analyst" Role="AnalystRole"/>
+    <Item Id="WidgetGuide" Title="Памятка по формированию виджетов" Icon="fa fa-fw fa-file-text" Target="_blank" Url="WidgetGuide" Role="ManagersDesktopAnyRole"/>
+    <Item Title="-"/>
+    <Item Id="MangersDesktop"
+          Title="Личный кабинет"
+          Icon="fa fa-fw fa-briefcase"
+          Url="ManagersDesktopUrl" 
+          Role="ManagersDesktopAnyRole"
+          BuildType="DEMO"/>     
+    <Item Id="MangersDesktop"
+          Title="Личный кабинет"
+          Icon="fa fa-fw fa-briefcase"
+          Url="ManagersDesktopUrl" 
+          Role="ManagersDesktopAnyRole"
+          BuildType="GISP"/> 
+    <Item Id="Registry"
+          Title="Реестр объектов"
+          Icon="fa fa-fw fa-map-marker"
+          Url="RegistryUrl" 
+          Role="RegistryAnyRole"
+          BuildType="DEMO"/>       
+    <Item Id="MangersDesktop"
+          Title="Портфель руководителя"
+          Icon="fa fa-fw fa-briefcase"
+          Url="ManagersDesktopUrl" 
+          Role="ManagersDesktopAnyRole"
+          BuildType="ASUTK"/>   
+    <Item Id="MasterData"
+      Title="Нормативно-справочная информация"
+      Icon="fa fa-fw fa-database"
+      Url="MasterDataUrl" 
+      Role="MasterDataAnyRole"/>
+  </Menu>
+
+  <Menu Id="SUPPORT">
+    <Item Id="SupportSite" Title="Техническая поддержка" Icon="fa fa-globe" Target="_blank" Url="https://support.asutk.ru/_layouts/15/listform.aspx?PageType=8&amp;ListId=%7B5B268318%2D174F%2D4ACA%2DBE93%2DEDF62E791F66%7D&amp;RootFolder="/>
+    <Item Id="SupportPhone" Title="+7 (495) 121-09-27" Icon="fa fa-phone" Url="callto:+74951210927"/>
+  </Menu>
+
+  <Menu Id="PRESS">
+    <Item Id="mstk_yandex"
+          Url="https://news.yandex.ru/vehicle.rss"
+          Title="Яндекс.Новости: Транспорт"/>
+    <Item Id="mstk_rostransport"
+          Url="http://www.rostransport.com/news/rss/"
+          Title="Транспорт РФ"/>
+    <Item Id="mstk_rbc"
+          Url="http://static.feed.rbc.ru/rbc/internal/rss.rbc.ru/rbc.ru/news.rss"
+          Title="РБК"/>
+    <Item Id="mstk_mintranssvyaz"
+          Url="http://www.rg.ru/org/pravitelstvo/mintranssvyaz/rss.xml"
+          Title="Министерство транспорта - Российская газета"/>
+    <Item Id="mstk_feddoragentstvo"
+          Url="http://www.rg.ru/org/pravitelstvo/mintranssvyaz/feddoragentstvo/rss.xml"
+          Title="Федеральное дорожное агентство (Росавтодор) - Российская газета"/>
+    <Item Id="mstk_transvozdux"
+          Url="http://www.rg.ru/org/pravitelstvo/mintranssvyaz/transvozdux/rss.xml"
+          Title="Федеральное агентство воздушного транспорта (Росавиация) - Российская газета"/>
+    <Item Id="mstk_fedzhdtrans"
+          Url="http://www.rg.ru/org/pravitelstvo/mintranssvyaz/fedzhdtrans/rss.xml"
+          Title="Федеральное агентство железнодорожного транспорта (Росжелдор) - Российская газета"/>
+    <Item Id="mstk_vodntransport"
+          Url="http://www.rg.ru/org/pravitelstvo/mintranssvyaz/vodntransport/rss.xml"
+          Title="Федеральное агентство морского и речного транспорта (Росморречфлот) - Российская газета"/>
+    <Item Id="mstk_mintrans"
+          Url="http://www.mintrans.ru/subscribe/rss/news"
+          Title="Министерство транспорта"/>
+    <Item Id="mstk_dtMos"
+          Url="https://www.mos.ru/dt/news/rss/"
+          Title="Департамент транспорта г. Москвы"/>
+    <!--<Item Id="mstk_roszeldor" Url="http://www.roszeldor.ru/rss.xml" 
+          Title=""/>-->
+  </Menu>
+
+</MenuCollection>

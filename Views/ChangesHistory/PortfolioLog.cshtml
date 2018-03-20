@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Портфель руководителя";
+}
+
+<div class="vertical-layout" style="padding: 0 15px">
+    <div class="vertical-fill" data-bind="template: {name: 'changesHistory/actionLog' }"></div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        require(['changesHistory/actionLog'], function (ActionLog) {
+            var model = new ActionLog.PortfolioMonitoringDxView({ pageSize: 20 });
+            ko.applyBindings(model);
+        });
+    </script>
+}

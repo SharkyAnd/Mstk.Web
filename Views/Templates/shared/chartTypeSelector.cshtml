@@ -1,0 +1,8 @@
+﻿<!-- ko if: canChangeChartType -->
+<div class="btn-group btn-group-sm" data-bind="foreach: applicableChartTypes">
+    <button class="btn btn-default btn-view-command"
+            data-bind="attr:{ title: name }, css: { active: $parent.chartType().id == $data.id }, clickAndBlur: function() { $parent.setChartType($data.id); }">
+        <span data-bind="attr: { class: iconClass }"></span>
+    </button>
+</div>
+<!-- /ko -->

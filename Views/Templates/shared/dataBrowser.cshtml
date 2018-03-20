@@ -1,0 +1,56 @@
+﻿<div class="data-table">
+    <table class="table table-condensed table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <!-- ko foreach: columns -->
+                <th data-bind="style: { 'width': $data.width ? $data.width : 'auto'}">
+                    <!--ko ifnot: isSortable -->
+                        <span data-bind="text: name"></span>
+                    <!-- /ko -->
+                    <!--ko if: isSortable -->
+                        <a href="#" data-bind="text:name, click: $parent.sort"></a>
+                    <!-- /ko -->
+                </th>
+                <!-- /ko -->
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: dataSet">
+            <tr data-bind="css: $data.cssClass ? $data.cssClass: ''">
+                <!-- ko foreach: { data: $parent.columns, as: 'column' }-->
+                <td data-bind="css: column.cssClass ? column.cssClass : '', 
+                    click: ($parents[1].hasOwnProperty('organizationsList') && column.cssClass != 'control-buttons')?$parents[1].viewOrganizationLinks.bind($parents[1], $parent.Id()):function(){return false;},
+                    style:{cursor:$parents[1].hasOwnProperty('organizationsList')?'pointer':'default'}">
+                    <!-- ko if: $data.template --> 
+                    <!-- ko template: $data.template --><!-- /ko --><!-- /ko --> 
+                    <!-- ko ifnot: $data.template -->
+                    <div data-bind="html: $parents[1].getDisplayValueForColumn.call($parent, $parent, column)"></div>
+                    <!-- ko if: buttons-->
+                    <!-- ko foreach: buttons-->
+                    <!-- ko if: !$.isFunction($data.onlyIf) || $data.onlyIf($parents[1]) -->
+                    <a data-bind="css: $data.icon ? ($.isFunction($data.icon) ? $data.icon.call($data, $parents[1]) : $data.icon) : '', 
+                       click: handler.bind($parent, $parents[1]), 
+                       attr: { title: $data.title ? $data.title : '' },
+                       tooltip: $data.tooltip"
+                       class="cursor-pointer"></a>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </td>
+                <!-- /ko -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr data-bind="visible: !ko.unwrap(hasItems)">
+                <td class="text-center text-muted small" data-bind="attr: { colspan: columns().length }">
+                    Нет данных для отображения
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div data-bind="with: pager" class="pager-container">
+        <!-- ko template: 'pager'-->
+        <!-- /ko -->
+    </div>
+</div>

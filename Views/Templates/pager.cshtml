@@ -1,0 +1,6 @@
+﻿<div class="form-group" data-bind="visible: buttons().length > 0">
+    <ul class="pagination pagination-sm" style="margin-bottom:0; margin-top:0" data-bind="foreach: buttons">
+        <li data-bind="css: { disabled: !isEnabled() && !isCurrent(), active: isCurrent }"><a href="#" data-bind="text:text, click: $parent.navigate"></a></li>
+    </ul>
+</div>
+

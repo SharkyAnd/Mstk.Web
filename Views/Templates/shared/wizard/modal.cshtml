@@ -1,0 +1,33 @@
+﻿<div class="modal fade" data-bind="validationOptions: { errorClass: 'has-error', errorElementClass: 'has-error', insertMessages: false }">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" data-bind="text: title"></h4>
+            </div>
+            <div class="modal-body" style="overflow-y: auto; overflow-x: auto; max-height: 100%; height: auto;">
+                <!-- ko with: activePage -->
+                    <!-- ko template: 'shared/wizard/page' --><!-- /ko -->
+                <!-- /ko -->
+
+                <!-- ko if: isBusy -->
+                <!-- ko template: 'shared/loadingPanel' --><!-- /ko -->
+                <!-- /ko -->
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group" style="margin-right:5px">
+                    <button type="button" style="width: 120px" class="btn btn-default btn-sm" 
+                            data-bind="click: back, enable: canBack">&lt; Назад</button>
+                    <button type="button" style="width: 120px" class="btn btn-sm" 
+                            data-bind="click: next, enable: canNext, css:{'btn-default': canFinish, 'btn-primary': !canFinish()}">Далее &gt;</button>
+                </div>
+                <button type="button" style="width: 120px" class="btn btn-primary btn-sm" 
+                        data-bind="click: finish, enable: canFinish, css:{'btn-default': !canFinish(), 'btn-primary': canFinish}">
+                    <!-- ko text: finishText --><!-- /ko -->
+                    <i data-bind="css: { 'fa fa-spinner fa-spin': isFinishing }"></i>
+                </button>
+                <button class="btn btn-default btn-sm" style="width:120px"
+                        data-bind="click: cancel, enable: canCancel">Отменить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

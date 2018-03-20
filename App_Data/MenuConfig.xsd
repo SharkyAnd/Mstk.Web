@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MenuConfig"
+    targetNamespace="http://asutk.ru/schemas/menu"
+    elementFormDefault="qualified"
+    xmlns="http://asutk.ru/schemas/menu"
+    xmlns:tns="http://asutk.ru/schemas/menu"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:simpleType name="MenuAlign">
+    <xs:annotation>
+      <xs:documentation>Способ выравнивания элемента меню</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="MenuItem">
+    <xs:annotation>
+      <xs:documentation>Описывает элемент меню.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:Item">
+        <xs:annotation>
+          <xs:documentation>Дочерние элементы меню.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Id" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Идентификатор элемента меню (необязательный)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Url" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Адрес для перехода при выборе элемента меню.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Title" use="required" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Название</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Icon" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>CSS-класс иконки</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Align" use="optional" type="tns:MenuAlign" default="Left">
+      <xs:annotation>
+        <xs:documentation>Выравнивание элемента меню. Используется только для элементов верхнего уровня.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Target" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Значение атрибута target у HTML-элемента &lt;a&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Role" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Роли, для которых доступен элемент меню</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="BuildType" use="optional" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Тип билда, при котором доступен элемент меню</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="Item" type="tns:MenuItem"/>
+  
+  <xs:complexType name="Menu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:Item"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Идентификатор меню</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="Menu" type="tns:Menu"/>
+
+  <xs:complexType name="MenuCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:Menu"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuCollection" type="tns:MenuCollection"/>
+  
+</xs:schema>

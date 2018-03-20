@@ -1,0 +1,11 @@
+﻿<!-- ko if: isVisible -->
+<div class="form-group form-group-sm" data-bind="css: { 'has-error': !isValid() }">
+    <label class="col-sm-4 control-label">
+        <span data-bind="text: title"></span>:&nbsp;<span style="color: #f00" data-bind="visible: isRequired() && !isReadOnly()">*</span>
+    </label>
+    <div class="col-sm-8" data-bind="validationElement: value">
+        <div data-bind="template: { name: editorTemplate }"></div>
+        <p class="small help-block property-validation-message" data-bind="validationMessage: value"></p>
+    </div>
+</div>
+<!-- /ko -->
